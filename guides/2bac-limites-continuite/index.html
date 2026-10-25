@@ -1,0 +1,41 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Limites et continuité : résumé | Moalim</title>
+<style>
+:root{--ink:#000000;--accent:#FFD23F;--accent2:#E5261E}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Moalim</small><h1>Limites et continuité : résumé</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Mathématiques · 2BAC Sciences Physiques BIOF · Chapitre 1</p>
+<h2>1. La limite, une tendance</h2>
+<div style="border-left:6px solid var(--accent);background:#fff8e1;padding:10px 16px;margin:12px 0;border-radius:6px">La <b>limite</b> décrit le comportement de f(x) quand x s'approche d'une valeur a, ou quand x tend vers +∞ ou −∞. Approcher n'est pas atteindre.</div>
+<ul>
+<li>Limites usuelles : lim (x→+∞) 1/x = 0 ; lim (x→0⁺) 1/x = +∞ ; lim (x→+∞) √x = +∞.</li>
+<li>En un point a : si la limite à gauche et la limite à droite sont égales à ℓ, alors lim (x→a) f(x) = ℓ.</li>
+</ul>
+<figure style="margin:18px 0;text-align:center"><svg viewBox="0 0 640 240" width="520" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif" font-size="15"> <line x1="40" y1="200" x2="620" y2="200" stroke="#333" stroke-width="2"/><line x1="60" y1="225" x2="60" y2="10" stroke="#333" stroke-width="2"/> <path d="M75 20 C 95 120, 140 165, 220 180 S 450 197, 620 199" fill="none" stroke="#C84BFF" stroke-width="4"/> <text x="450" y="185" fill="#C84BFF">y = 1/x</text><text x="470" y="225">asymptote y = 0</text> </svg></figure>
+<h2>2. Formes indéterminées</h2>
+<ul>
+<li>Formes : 0/0, ∞/∞, ∞ − ∞, 0 × ∞. Elles imposent de <b>transformer</b> l'expression.</li>
+<li>Polynôme ou fraction : <b>factoriser</b> (ou garder le terme de plus haut degré en ±∞).</li>
+<li>Racine carrée : multiplier par le <b>conjugué</b>.</li>
+</ul>
+<h2>3. Asymptotes et continuité</h2>
+<ul>
+<li>lim (x→a) f(x) = ±∞ : <b>asymptote verticale</b> x = a. lim (x→±∞) f(x) = b : <b>asymptote horizontale</b> y = b.</li>
+<li>lim (x→±∞) [f(x) − (ax + b)] = 0 : <b>asymptote oblique</b> y = ax + b.</li>
+<div style="border-left:6px solid var(--accent);background:#fff8e1;padding:10px 16px;margin:12px 0;border-radius:6px">f est <b>continue</b> en a si lim (x→a) f(x) = f(a).</div>
+<div style="border-left:6px solid var(--accent);background:#fff8e1;padding:10px 16px;margin:12px 0;border-radius:6px"><b>TVI</b> : si f est continue sur [a, b] et f(a) × f(b) &lt; 0, l'équation f(x) = 0 a au moins une solution dans ]a, b[ ; une seule si f est strictement monotone.</div>
+</ul>
+<h2>4. Mini-exercice</h2>
+<p>Calculer lim (x→2) (x² − 4)/(x − 2), puis lim (x→+∞) (2x² + 1)/(x² − 3).</p>
+<p><b>Correction</b> : forme 0/0 ; on factorise : (x − 2)(x + 2)/(x − 2) = x + 2, donc la limite vaut <b>4</b>.</p>
+<p>En +∞ on garde les termes de plus haut degré : 2x²/x² = 2, donc la limite vaut <b>2</b> (asymptote horizontale y = 2).</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC0hMra6rzg2SsTqahlpZ2GA?sub_confirmation=1">🔔 S'abonner à Moalim</a></div></main>
+<footer>Résumé offert par Moalim · 2BAC Sciences Physiques BIOF.</footer></body></html>
