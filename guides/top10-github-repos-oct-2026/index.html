@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Top 10 GitHub Repos This Week: links and install steps | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Top 10 GitHub Repos This Week: links and install steps</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Ranked by average stars per day since creation, GitHub data of October 23, 2026. Each README's install command is quoted as written by its authors: read it before you run anything. Stars change daily.</p>
+<p>| # | Repo | License | What it is |</p>
+<p>|---|------|---------|------------|</p>
+<p>| 1 | https://github.com/deepseek-ai/deepseek-harness | MIT | Open source agent harness, "everything is a plugin" (developer preview) |</p>
+<p>| 2 | https://github.com/storytold/photocraft | MIT or Apache-2.0 | Photoshop-style image editor in pure Rust (early alpha) |</p>
+<p>| 3 | https://github.com/deepseek-ai/DeepInfer | Apache-2.0 | DeepSeek inference framework (needs NVIDIA SM100 or Ascend 950) |</p>
+<p>| 4 | https://github.com/DietrichGebert/ponytail | MIT | Makes your AI agent write less code |</p>
+<p>| 5 | https://github.com/wheresryan22/anatomy | MIT | Claude skill for interactive isometric figures |</p>
+<p>| 6 | https://github.com/openclaw/openclaw | MIT | Open source personal AI assistant |</p>
+<p>| 7 | https://github.com/mattpocock/skills | MIT | Agent skills for real engineers |</p>
+<p>| 8 | https://github.com/google-research/harness2 | Apache-2.0 | Recursive agent harnessing |</p>
+<p>| 9 | https://github.com/storytold/wordcraft | MIT or Apache-2.0 | Word processor in pure Rust |</p>
+<p>| 10 | https://github.com/tangency-labs/solidcraft | MIT or Apache-2.0 | Parametric 3D CAD in pure Rust |</p>
+<h2>Install steps (from each README)</h2>
+<ul>
+<li><b>DeepSeek Harness</b>: install Node.js, then <code>npx @deepseek-ai/dsh web</code>. In our sandbox the npx launch failed with "dsh: not found" (package version 0.2.1-rc.2 exists on npm). Or from source: <code>pnpm install &amp;&amp; pnpm run build &amp;&amp; pnpm dsh web</code>.</li>
+<li><b>Harness²</b> (we ran this): Linux, Python 3.12, uv. <code>uv venv --python 3.12 .venv</code>, <code>source .venv/bin/activate</code>, <code>uv pip install -e '.[render]'</code>, <code>harness2-demo --output runs/demo --k 2</code>. Result for us: 2 tasks completed, 0 failed.</li>
+<li><b>Anatomy</b>: <code>npx skills add wheresryan22/anatomy -g</code>, then <code>/anatomy explain how a token bucket rate limiter works, interactive</code>.</li>
+<li><b>Ponytail</b> (Claude Code): <code>/plugin marketplace add DietrichGebert/ponytail</code>, then <code>/plugin install ponytail@ponytail</code>.</li>
+<li><b>Skills</b>: <code>claude plugin install mattpocock-skills@claude-plugins-official</code>, then run <code>/setup-matt-pocock-skills</code> once per repo.</li>
+<li><b>WordCraft</b>: <code>cargo run --release -p wordcraft -- --sample</code> (needs Rust).</li>
+<li><b>OpenClaw</b>: the README's main installer pipes a script into the shell. We did not run it. Read the script first, or use the npm package route in the README.</li>
+<li><b>DeepInfer, PhotoCraft, SolidCraft</b>: see each README; DeepInfer needs a supported GPU, and the other two are Rust projects (cargo).</li>
+</ul>
+<h2>3 things to do</h2>
+<ol>
+<li>Open each README and check the license file before using a repo.</li>
+<li>Try the one that fits your stack in a throwaway folder or container.</li>
+<li>Check the repo's issues and last commit date before relying on it.</li>
+</ol>
+<h2>2 mistakes to avoid</h2>
+<ol>
+<li>Running <code>curl | sh</code> installers without reading them.</li>
+<li>Treating a README's benchmark claims as proven: they are the authors' claims.</li>
+</ol>
+<h2>Glossary</h2>
+<ul>
+<li><b>Harness</b>: the system around a model (prompts, tools, memory, orchestration) that lets it act as an agent.</li>
+<li><b>Inference</b>: running a trained model to get outputs.</li>
+<li><b>Clean-room</b>: written without copying the original program's code, by the authors' own description.</li>
+<li><b>MCP</b>: Model Context Protocol, a standard for connecting tools to AI agents.</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
