@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>PdfCraft: free, open-source PDF editor in Rust | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>PdfCraft: free, open-source PDF editor in Rust</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/storytold/pdfcraft">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>Repo:</b> <a href="https://github.com/storytold/pdfcraft">github.com/storytold/pdfcraft</a> · <b>License:</b> MIT or Apache-2.0 (your choice) · <b>Language:</b> Rust</p>
+<h2>What it does</h2>
+<p>PdfCraft is a PDF reader and editor written in pure Rust. Besides the desktop app it ships a command-line tool, <code>pdfcraft-cli</code>, that can combine, split, extract, rotate and delete pages, edit metadata, extract text and render pages to images. The project's README says it has no account and no telemetry.</p>
+<h2>Install, step by step</h2>
+<p>Building needs Rust 1.95 or later (the README says so).</p>
+<ol>
+<li>Clone the repo: <code>git clone https://github.com/storytold/pdfcraft</code></li>
+<li>Go into it: <code>cd pdfcraft</code></li>
+<li>Build only the command-line tool: <code>cargo build --release -p pdfcraft-cli --no-default-features</code></li>
+<li>The binary is in <code>target/release/pdfcraft-cli</code>. In our test the build took about 7 minutes on a 4-core machine.</li>
+<li>Prefer the desktop app? The README shows <code>cargo run --release -p pdfcraft -- some.pdf</code>, and prebuilt releases are on the GitHub Releases page.</li>
+</ol>
+<h2>3 things to try (all tested in the video)</h2>
+<ol>
+<li><b>Combine files:</b> <code>pdfcraft-cli combine invoice.pdf contract.pdf --out combined.pdf</code> (2 files, 5 pages in our test)</li>
+<li><b>Pick pages:</b> <code>pdfcraft-cli extract combined.pdf --pages 1,3-4 --out picked.pdf</code></li>
+<li><b>Delete, rotate, retitle:</b> <code>pdfcraft-cli edit combined.pdf --out final.pdf --delete 2 --rotate 1:90 --title Signed</code></li>
+</ol>
+<h2>Good to know</h2>
+<ul>
+<li>Run <code>pdfcraft-cli --help</code> to see every command (info, render, text, split, check, audit, batch).</li>
+<li>The project is about a month old and moves fast: check the README and the Releases page for the latest instructions.</li>
+<li>Always keep a copy of your original PDFs before editing.</li>
+</ul>
+<p>*Sources: the PdfCraft README and LICENSE on GitHub; commands run for real in an isolated sandbox for the video.*</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

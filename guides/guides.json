@@ -28,5 +28,10 @@
   "channel": "repo-radar",
   "title": "Top 10 GitHub Repos This Week: links and install steps",
   "link": null
+ },
+ "pdfcraft": {
+  "channel": "repo-radar",
+  "title": "PdfCraft: free, open-source PDF editor in Rust",
+  "link": "https://github.com/storytold/pdfcraft"
  }
 }
