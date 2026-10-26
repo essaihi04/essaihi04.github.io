@@ -33,5 +33,10 @@
   "channel": "repo-radar",
   "title": "PdfCraft: free, open-source PDF editor in Rust",
   "link": "https://github.com/storytold/pdfcraft"
+ },
+ "kodiak-cakes": {
+  "channel": "fallen-empires",
+  "title": "Kodiak Cakes: the deal sheet",
+  "link": null
  }
 }
