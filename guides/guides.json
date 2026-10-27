@@ -48,5 +48,10 @@
   "channel": "repo-radar",
   "title": "Memos: self-host your own notes",
   "link": "https://github.com/usememos/memos"
+ },
+ "pdf-to-quiz": {
+  "channel": "ai-explained",
+  "title": "Turn Any PDF Into a Quiz With AI: the prompt pack",
+  "link": null
  }
 }
