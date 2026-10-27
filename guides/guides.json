@@ -38,5 +38,10 @@
   "channel": "fallen-empires",
   "title": "Kodiak Cakes: the deal sheet",
   "link": null
+ },
+ "run-ai-laptop-free": {
+  "channel": "ai-explained",
+  "title": "Run an AI Model on Your Laptop: Cheat Sheet",
+  "link": "https://github.com/ollama/ollama"
  }
 }

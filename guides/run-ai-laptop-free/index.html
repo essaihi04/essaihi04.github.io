@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Run an AI Model on Your Laptop: Cheat Sheet | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>Run an AI Model on Your Laptop: Cheat Sheet</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/ollama/ollama">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Everything from the Short, in one place. Facts from the Ollama README and model page (links at the end).</p>
+<h2>1. Install Ollama</h2>
+<p>Ollama is open source (MIT license) and runs on macOS, Windows and Linux.</p>
+<ul>
+<li><b>macOS:</b> <code>curl -fsSL https://ollama.com/install.sh | sh</code>, or download the Ollama.dmg installer.</li>
+<li><b>Windows:</b> <code>irm https://ollama.com/install.ps1 | iex</code> in PowerShell, or download OllamaSetup.exe.</li>
+<li><b>Linux:</b> <code>curl -fsSL https://ollama.com/install.sh | sh</code></li>
+</ul>
+<h2>2. Run your first model</h2>
+<pre><code>ollama run llama3.2</code></pre>
+<p>This pulls the default Llama 3.2 model (3B parameters, about 2.0 GB) the first time, then opens a chat in your terminal. Type a question and press Enter.</p>
+<h2>3. Short on space?</h2>
+<pre><code>ollama run llama3.2:1b</code></pre>
+<p>The 1B version is about 1.3 GB.</p>
+<h2>Quick reference</h2>
+<ul>
+<li><code>ollama run &lt;model&gt;</code>: chat with a model (downloads it if needed)</li>
+<li>Both Llama 3.2 sizes list a 128K context length on the model page.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://github.com/ollama/ollama">Ollama on GitHub</a></li>
+<li><a href="https://ollama.com/library/llama3.2">Llama 3.2 on Ollama</a></li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
