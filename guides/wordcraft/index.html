@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>WordCraft: free, open-source word processor in pure Rust | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>WordCraft: free, open-source word processor in pure Rust</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/storytold/wordcraft">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>Repo:</b> https://github.com/storytold/wordcraft · <b>Licence:</b> MIT or Apache-2.0 (dual) · <b>Language:</b> Rust</p>
+<h2>What it is</h2>
+<p>WordCraft is a word processor written from scratch in Rust by the ArtCraft team. Per its README it opens and saves .docx, reads and writes .odt, .rtf, .html, .md, .tex and .txt, exports PDF, and has a command-line tool. It passed 15,000 GitHub stars in under three weeks (snapshot of 2026-10-23: 15,733 stars, repo created 2026-10-06).</p>
+<h2>Install (from the README, requires Rust/cargo)</h2>
+<ol>
+<li><code>git clone https://github.com/storytold/wordcraft &amp;&amp; cd wordcraft</code></li>
+<li>Desktop app with a sample document: <code>cargo run --release -p wordcraft -- --sample</code></li>
+<li>Command-line tool only: <code>cargo build -p wordcraft-cli</code> (our sandbox build took about 5.5 minutes)</li>
+</ol>
+<h2>What we really ran (sandbox, 2026-10-27)</h2>
+<ul>
+<li><code>wordcraft-cli run --template sample --cmd 'select.text={"text":"Membership"}' --cmd format.bold --save out.docx</code> → wrote a 10,648-byte .docx in about 0.1 s</li>
+<li><code>wordcraft-cli convert out.docx out.pdf</code> → 47,851-byte PDF in about 3.6 s</li>
+<li><code>wordcraft-cli text out.docx</code> → plain text of the document</li>
+</ul>
+<h2>3 ways to use it</h2>
+<ol>
+<li>Convert documents between formats from a script: <code>wordcraft-cli convert in.docx out.md</code></li>
+<li>Dump the text of a .docx: <code>wordcraft-cli text file.docx</code></li>
+<li>Inspect a document's structure as JSON: <code>wordcraft-cli inspect file.docx</code></li>
+</ol>
+<h2>Honest verdict</h2>
+<p>It works for what we tried. The build is slow. Check the README for platform installers and the project's roadmap before relying on it.</p>
+<h2>Sources</h2>
+<ul>
+<li>https://github.com/storytold/wordcraft (README, LICENSE-MIT, LICENSE-APACHE)</li>
+<li>Real run in a sandbox, 2026-10-27</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

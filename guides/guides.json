@@ -53,5 +53,10 @@
   "channel": "ai-explained",
   "title": "Turn Any PDF Into a Quiz With AI: the prompt pack",
   "link": null
+ },
+ "wordcraft": {
+  "channel": "repo-radar",
+  "title": "WordCraft: free, open-source word processor in pure Rust",
+  "link": "https://github.com/storytold/wordcraft"
  }
 }
