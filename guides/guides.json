@@ -43,5 +43,10 @@
   "channel": "ai-explained",
   "title": "Run an AI Model on Your Laptop: Cheat Sheet",
   "link": "https://github.com/ollama/ollama"
+ },
+ "memos-self-hosted-notes": {
+  "channel": "repo-radar",
+  "title": "Memos: self-host your own notes",
+  "link": "https://github.com/usememos/memos"
  }
 }

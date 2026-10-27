@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Memos: self-host your own notes | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Memos: self-host your own notes</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/usememos/memos">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is.</b> Memos is an open-source, self-hosted note-taking app. Notes are written in Markdown and kept on a personal timeline, with tags to connect related thoughts. Your data stays on your own server. You choose what stays private, what is shared and what is published.</p>
+<p><b>License:</b> MIT. <b>Repo:</b> https://github.com/usememos/memos</p>
+<h2>Install in one command (Docker)</h2>
+<pre><code>docker run -d \
+  --name memos \
+  -p 5230:5230 \
+  -v ~/.memos:/var/opt/memos \
+  neosmemo/memos:stable</code></pre>
+<p>Open http://localhost:5230 and create the first account. Everything Memos keeps is in <code>~/.memos</code>, so back up that one folder.</p>
+<h2>What we tested</h2>
+<p>We built the server from source in a sandbox (about 110 seconds with Go), started it, and the health check at <code>/healthz</code> answered HTTP 200. We did not test the Docker image itself.</p>
+<h2>3 ways to use it</h2>
+<ol>
+<li>A quick daily journal: one sentence is a whole memo.</li>
+<li>Tag-based project notes you can find again later.</li>
+<li>Save web pages as Markdown with the Web Clipper (Chrome and Firefox), or connect scripts and AI tools through the API and MCP server.</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li>Memos README: https://github.com/usememos/memos</li>
+<li>MIT license file in the repository</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
