@@ -58,5 +58,10 @@
   "channel": "repo-radar",
   "title": "WordCraft: free, open-source word processor in pure Rust",
   "link": "https://github.com/storytold/wordcraft"
+ },
+ "tipsy-elves": {
+  "channel": "fallen-empires",
+  "title": "Tipsy Elves: the deal sheet",
+  "link": null
  }
 }
