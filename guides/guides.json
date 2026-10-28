@@ -68,5 +68,10 @@
   "channel": "fallen-empires",
   "title": "Toygaroo: the deal sheet",
   "link": null
+ },
+ "which-ai-which-job": {
+  "channel": "ai-explained",
+  "title": "Which AI for Which Job? The test prompt",
+  "link": null
  }
 }
