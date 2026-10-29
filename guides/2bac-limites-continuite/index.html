@@ -1,7 +1,7 @@
 <!doctype html><html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Limites et continuité : résumé | Moalim</title>
 <style>
-:root{--ink:#000000;--accent:#FFD23F;--accent2:#E5261E}
+:root{--ink:#0E1A24;--accent:#FFD23F;--accent2:#2F7CFF}
 *{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
 header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
 header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
@@ -32,6 +32,10 @@ a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
 <li>lim (x→±∞) [f(x) − (ax + b)] = 0 : <b>asymptote oblique</b> y = ax + b.</li>
 <div style="border-left:6px solid var(--accent);background:#fff8e1;padding:10px 16px;margin:12px 0;border-radius:6px">f est <b>continue</b> en a si lim (x→a) f(x) = f(a).</div>
 <div style="border-left:6px solid var(--accent);background:#fff8e1;padding:10px 16px;margin:12px 0;border-radius:6px"><b>TVI</b> : si f est continue sur [a, b] et f(a) × f(b) &lt; 0, l'équation f(x) = 0 a au moins une solution dans ]a, b[ ; une seule si f est strictement monotone.</div>
+</ul>
+<div style="border-left:6px solid var(--accent);background:#fff8e1;padding:10px 16px;margin:12px 0;border-radius:6px"><b>Fonction réciproque</b> : si f est continue et strictement monotone sur un intervalle I, elle admet une fonction réciproque f⁻¹ définie sur f(I) ; les courbes de f et f⁻¹ sont symétriques par rapport à la droite y = x. Attention : f⁻¹ ≠ 1/f.</div>
+<ul>
+<li><b>Dichotomie</b> : pour encadrer la solution α de f(x) = 0, on coupe l'intervalle en deux à chaque étape et on garde la moitié où f change de signe (la longueur est divisée par 2). Exemple : f(x) = x³ + x − 3, f(1) = −1 &lt; 0, f(2) = 7 &gt; 0, f(1,5) = 1,875 &gt; 0 donc α ∈ ]1 ; 1,5[ ; f(1,25) ≈ 0,20 &gt; 0 donc α ∈ ]1 ; 1,25[.</li>
 </ul>
 <h2>4. Mini-exercice</h2>
 <p>Calculer lim (x→2) (x² − 4)/(x − 2), puis lim (x→+∞) (2x² + 1)/(x² − 3).</p>
