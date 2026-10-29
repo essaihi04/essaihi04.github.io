@@ -78,5 +78,10 @@
   "channel": "repo-radar",
   "title": "Trilium Notes: free, self-hosted note-taking",
   "link": "https://github.com/TriliumNext/Trilium"
+ },
+ "breathometer-ftc": {
+  "channel": "fallen-empires",
+  "title": "Breathometer: the deal sheet",
+  "link": null
  }
 }
