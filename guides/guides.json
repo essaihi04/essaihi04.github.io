@@ -88,5 +88,10 @@
   "channel": "repo-radar",
   "title": "Ponytail: setup guide",
   "link": "https://github.com/DietrichGebert/ponytail"
+ },
+ "ai-hallucinations": {
+  "channel": "ai-explained",
+  "title": "The AI Fact-Check Cheat Sheet",
+  "link": null
  }
 }
