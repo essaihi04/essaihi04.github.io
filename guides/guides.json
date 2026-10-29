@@ -73,5 +73,10 @@
   "channel": "ai-explained",
   "title": "Which AI for Which Job? The test prompt",
   "link": null
+ },
+ "trilium-notes": {
+  "channel": "repo-radar",
+  "title": "Trilium Notes: free, self-hosted note-taking",
+  "link": "https://github.com/TriliumNext/Trilium"
  }
 }
