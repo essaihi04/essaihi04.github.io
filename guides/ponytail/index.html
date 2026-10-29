@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Ponytail: setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Ponytail: setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/DietrichGebert/ponytail">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is:</b> a free, MIT-licensed prompt (a 52-line <code>SKILL.md</code>) that makes your AI coding agent pick the smallest change that solves the task.</p>
+<p>Before writing code, the agent works down a ladder: does it need to exist, is it already in the codebase, does the standard library or the browser do it, is there an installed dependency, can it be one line, and only then the minimum that works.</p>
+<p><b>Link:</b> https://github.com/DietrichGebert/ponytail</p>
+<h2>Install in Claude Code</h2>
+<p>Send these as two separate prompts:</p>
+<pre><code>/plugin marketplace add DietrichGebert/ponytail</code></pre>
+<pre><code>/plugin install ponytail@ponytail</code></pre>
+<p>Other agents: copy <code>AGENTS.md</code> into your project, or install <code>skills/ponytail/SKILL.md</code> as a skill (see <code>INSTALL.md</code> in the repo). The hooks need <code>node</code> on your PATH.</p>
+<h2>Commands (from the README)</h2>
+<ul>
+<li><code>/ponytail [lite | full | ultra | off]</code>: set the intensity</li>
+<li><code>/ponytail-review</code>: review the current diff</li>
+<li><code>/ponytail-audit</code>: the same check for the whole repo</li>
+<li><code>/ponytail-debt</code>: collect deferred <code>shortcut:</code> comments</li>
+</ul>
+<h2>3 ways to use it</h2>
+<ol>
+<li>Ask for a small UI feature and watch it reuse your existing components or native browser features.</li>
+<li>Run <code>/ponytail-review</code> on a diff before you merge.</li>
+<li>Run <code>/ponytail-audit</code> on an old repo to find code you can cut.</li>
+</ol>
+<h2>What we measured</h2>
+<p>Cloned into a sandbox on 2026-10-29: <code>skills/ponytail/SKILL.md</code> is 52 lines; the repo's own test suite ran 144 tests, 143 passed and 1 failed.</p>
+<p>The "335 lines down to 10" date picker is the README's own example, not our benchmark.</p>
+<h2>Sources</h2>
+<ul>
+<li>https://github.com/DietrichGebert/ponytail (README, INSTALL.md, LICENSE: MIT)</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

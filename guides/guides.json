@@ -83,5 +83,10 @@
   "channel": "fallen-empires",
   "title": "Breathometer: the deal sheet",
   "link": null
+ },
+ "ponytail": {
+  "channel": "repo-radar",
+  "title": "Ponytail: setup guide",
+  "link": "https://github.com/DietrichGebert/ponytail"
  }
 }
