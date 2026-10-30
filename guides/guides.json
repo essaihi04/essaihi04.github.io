@@ -103,5 +103,10 @@
   "channel": "repo-radar",
   "title": "Umami: self-hosted analytics without cookies",
   "link": "https://github.com/umami-software/umami"
+ },
+ "sheets-formulas": {
+  "channel": "ai-explained",
+  "title": "5 Prompts to Get Spreadsheet Formulas From Gemini in Google Sheets",
+  "link": null
  }
 }
