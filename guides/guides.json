@@ -108,5 +108,10 @@
   "channel": "ai-explained",
   "title": "5 Prompts to Get Spreadsheet Formulas From Gemini in Google Sheets",
   "link": null
+ },
+ "local-ai-no-internet": {
+  "channel": "ai-explained",
+  "title": "Run AI on Your Laptop, Offline: Setup Guide & Size Cheat Sheet",
+  "link": "https://github.com/ollama/ollama"
  }
 }

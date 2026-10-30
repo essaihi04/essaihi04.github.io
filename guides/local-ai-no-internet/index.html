@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Run AI on Your Laptop, Offline: Setup Guide &amp; Size Cheat Sheet | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>Run AI on Your Laptop, Offline: Setup Guide &amp; Size Cheat Sheet</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/ollama/ollama">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>A quick companion to the video. Every figure below comes from the tools' own pages or the Ollama model library; the memory advice is a rule of thumb, not a guarantee.</p>
+<h2>The idea</h2>
+<p>A local model is a file. You download it once, then your own computer runs it. After the download, chatting works with no internet.</p>
+<h2>The three free tools</h2>
+<p>| Tool | What it is | Offline? | Notes |</p>
+<p>|---|---|---|---|</p>
+<p>| Ollama | Open-source runner with a local API | Yes, after you pull a model | MIT license. Install, pull a model, chat from the terminal. |</p>
+<p>| LM Studio | Desktop app with a model browser | Yes ("can operate entirely offline" once you have the model files) | Mac: Apple silicon + macOS 14 or newer. Windows: x64 needs AVX2; 16 GB RAM and 4 GB VRAM recommended. |</p>
+<p>| llama.cpp | "LLM inference in C/C++", the engine under many tools | Yes | MIT license. Apple silicon, CPUs (AVX/AVX2/AVX512), Nvidia GPUs (CUDA). 1.5-bit to 8-bit quantization. |</p>
+<h2>Download size cheat sheet (Ollama library)</h2>
+<p>| Model | Parameters | Download |</p>
+<p>|---|---|---|</p>
+<p>| Phi-3 | 3.8B | about 2.3 GB |</p>
+<p>| Mistral | 7B | about 4.1 GB |</p>
+<p>| Llama 3 | 8B | about 4.7 GB |</p>
+<p>| Llama 3 | 70B | about 40 GB |</p>
+<p>Rule of thumb from community guides: the file size approximates the free memory you need, plus a little for the conversation. If a model does not fit on your GPU, Ollama can offload part of it to system RAM (slower, still works).</p>
+<h2>Your 4-step plan</h2>
+<ol>
+<li>Check how much memory your laptop has.</li>
+<li>Install Ollama or LM Studio.</li>
+<li>Start with a small model (around 3B parameters).</li>
+<li>Move up only if you want more quality and your memory allows it.</li>
+</ol>
+<h2>Honest limits</h2>
+<ul>
+<li>Local models are smaller than the biggest cloud models; for hard reasoning and long documents the cloud is still stronger.</li>
+<li>Speed depends on your chip, memory and model. Test on your own machine (about ten minutes).</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Ollama: https://github.com/ollama/ollama</li>
+<li>llama.cpp: https://github.com/ggml-org/llama.cpp</li>
+<li>LM Studio system requirements: https://lmstudio.ai/docs/app/system-requirements</li>
+<li>Model sizes: Ollama model library (https://ollama.com/library)</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
