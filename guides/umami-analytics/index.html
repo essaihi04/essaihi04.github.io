@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Umami: self-hosted analytics without cookies | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Umami: self-hosted analytics without cookies</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/umami-software/umami">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Umami is a privacy-first web analytics tool and an alternative to Google Analytics. Licence: MIT. Repo: https://github.com/umami-software/umami</p>
+<h2>What I tested</h2>
+<ul>
+<li>Built the tracker from source in a sandbox with an empty environment (pnpm install, then the rollup tracker build).</li>
+<li>Build time: about 1.5 seconds. Output <code>public/script.js</code>: 4,773 bytes.</li>
+<li>Searching the built script for <code>document.cookie</code>: 0 matches.</li>
+<li>The only browser storage it reads is a <code>umami.disabled</code> opt-out flag in localStorage.</li>
+<li>It can respect Do Not Track when you enable the <code>data-do-not-track</code> option on the script tag.</li>
+</ul>
+<h2>Run it (Docker Compose, from the repo)</h2>
+<ol>
+<li>Clone the repo: <code>git clone https://github.com/umami-software/umami.git</code></li>
+<li>In <code>docker-compose.yml</code>, replace the <code>APP_SECRET</code> placeholder with a long random string.</li>
+<li>Start it: <code>docker compose up -d</code></li>
+<li>Open http://localhost:3000, log in, add your website and copy the tracking snippet into your page.</li>
+</ol>
+<h2>From source</h2>
+<ul>
+<li>Needs Node.js 18.18+ and PostgreSQL 12.14+.</li>
+<li>Create <code>.env</code> with <code>DATABASE_URL=postgresql://user:password@localhost:5432/db</code>, then <code>pnpm install</code> and <code>pnpm run build</code>.</li>
+</ul>
+<h2>3 uses</h2>
+<ul>
+<li>Traffic and top pages for a personal site or blog.</li>
+<li>Campaign links and conversions for a small shop.</li>
+<li>A privacy-friendly stats page for client projects.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Umami README and source: https://github.com/umami-software/umami (tracker: <code>src/tracker/index.ts</code>)</li>
+<li>This is a demo of one build, not a legal opinion: check your local privacy rules yourself.</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

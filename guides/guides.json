@@ -98,5 +98,10 @@
   "channel": "fallen-empires",
   "title": "Ring: the deal sheet",
   "link": "https://en.wikipedia.org/wiki/Ring_(company)"
+ },
+ "umami-analytics": {
+  "channel": "repo-radar",
+  "title": "Umami: self-hosted analytics without cookies",
+  "link": "https://github.com/umami-software/umami"
  }
 }
