@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Ponytail: setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Ponytail: setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/DietrichGebert/ponytail">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is.</b> Ponytail is an MIT-licensed "skill" for AI coding agents. It is a short markdown file (52 lines in <code>skills/ponytail/SKILL.md</code>) that tells your agent to make the smallest change that fully solves the task: reuse what exists, use the standard library, never add a dependency for a few lines, and never cut validation, error handling or security.</p>
+<ul>
+<li>Repo: https://github.com/DietrichGebert/ponytail</li>
+<li>Author: Dietrich Gebert · License: MIT</li>
+</ul>
+<h2>Install</h2>
+<p><b>Claude Code</b> (two separate prompts):</p>
+<pre><code>/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail</code></pre>
+<p><b>Codex:</b></p>
+<pre><code>codex plugin marketplace add DietrichGebert/ponytail
+codex plugin add ponytail@ponytail</code></pre>
+<p>Then open <code>/hooks</code> in Codex and trust its lifecycle hooks.</p>
+<p><b>Any other agent:</b> copy <code>AGENTS.md</code> from the repo into your project, or ask your agent to install <code>skills/ponytail/SKILL.md</code> as a skill. Step by step for other agents: <code>INSTALL.md</code> in the repo.</p>
+<p>Only install it from <code>DietrichGebert/ponytail</code> on GitHub or <code>@dietrichgebert/ponytail</code> on npm.</p>
+<h2>3 ways to use it</h2>
+<ol>
+<li><b>Daily coding.</b> Leave it on and compare the diffs your agent produces. Levels: <code>/ponytail lite|full|ultra</code>.</li>
+<li><b>Reviews.</b> The repo ships review and audit skills (<code>ponytail-review</code>, <code>ponytail-audit</code>) to flag over-built code.</li>
+<li><b>A/B test on one task.</b> Give the same task to your agent with and without the skill, then compare the diff size and the tests.</li>
+</ol>
+<h2>What we tested (and what we did not)</h2>
+<ul>
+<li>Cloned in a locked sandbox (no keys, no tokens), Node v22.22.0, <code>node --test tests/*.test.js</code>.</li>
+<li>Result: 144 tests, 143 passed, 1 failed, about 6 seconds.</li>
+<li>The failure is <code>csv: correct pandas one-liner passes</code>. That test runs a Python snippet that imports pandas, which is not installed in our sandbox: an environment gap, not a confirmed bug.</li>
+<li><b>Not tested:</b> the savings claims (53% less code, 41% less time, 26% less cost, 45% fewer tokens, 98% vs 68% of risky logic with a test). They come from the author's own benchmark (39 tasks, 5 runs each, README of the repo); we did not reproduce them.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Repo and README: https://github.com/DietrichGebert/ponytail (MIT, © 2026 DietrichGebert)</li>
+<li>Star count: Repo Radar GitHub snapshot, 2026-10-23 (174,739 stars)</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

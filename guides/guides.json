@@ -113,5 +113,10 @@
   "channel": "ai-explained",
   "title": "Run AI on Your Laptop, Offline: Setup Guide & Size Cheat Sheet",
   "link": "https://github.com/ollama/ollama"
+ },
+ "ponytail-honest-verdict": {
+  "channel": "repo-radar",
+  "title": "Ponytail: setup guide",
+  "link": "https://github.com/DietrichGebert/ponytail"
  }
 }
