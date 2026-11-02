@@ -133,5 +133,10 @@
   "channel": "repo-radar",
   "title": "AliasVault: self-host your password manager",
   "link": "https://github.com/aliasvault/aliasvault"
+ },
+ "what-is-an-ai-agent": {
+  "channel": "ai-explained",
+  "title": "The AI Agent Loop: a copy-paste prompt",
+  "link": null
  }
 }
