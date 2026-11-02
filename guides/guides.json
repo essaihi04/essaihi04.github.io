@@ -138,5 +138,10 @@
   "channel": "ai-explained",
   "title": "The AI Agent Loop: a copy-paste prompt",
   "link": null
+ },
+ "summarize-meeting-free-ai": {
+  "channel": "ai-explained",
+  "title": "Summarize a 1-Hour Meeting in 1 Minute With Free AI: the Prompt Pack",
+  "link": null
  }
 }
