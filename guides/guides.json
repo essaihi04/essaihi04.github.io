@@ -128,5 +128,10 @@
   "channel": "repo-radar",
   "title": "pixelfx: setup guide",
   "link": "https://github.com/patch-gg/pixelfx"
+ },
+ "aliasvault": {
+  "channel": "repo-radar",
+  "title": "AliasVault: self-host your password manager",
+  "link": "https://github.com/aliasvault/aliasvault"
  }
 }

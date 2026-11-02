@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>AliasVault: self-host your password manager | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>AliasVault: self-host your password manager</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/aliasvault/aliasvault">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is:</b> AliasVault is an open-source password and email alias manager. Passwords are end-to-end encrypted and it includes its own mail server. Repo: https://github.com/aliasvault/aliasvault (license: AGPL-3.0).</p>
+<h2>What we checked (in a sandbox, no secrets)</h2>
+<ul>
+<li>We cloned the repo and read the license: GNU AGPL v3.</li>
+<li><code>docker-compose.yml</code> lists 7 images: postgres, client, api, admin, reverse-proxy, smtp and task-runner.</li>
+<li>We did <b>not</b> run the full stack in this test. Read the official docs before trusting it with real passwords.</li>
+</ul>
+<h2>Requirements (from the README)</h2>
+<p>1 vCPU, 1 GB RAM, 5 GB free disk (16 GB recommended), Docker 20.10 or newer, 64-bit Linux.</p>
+<h2>Install steps (README, "Install Script" method)</h2>
+<ol>
+<li><code>curl -L -o install.sh https://github.com/aliasvault/aliasvault/releases/latest/download/install.sh</code></li>
+<li><code>chmod +x install.sh</code></li>
+<li><code>./install.sh install</code></li>
+</ol>
+<p>Read the script before running it. Full guide: https://docs.aliasvault.com/installation</p>
+<h2>3 things to do</h2>
+<ol>
+<li>Try the cloud version first at https://app.aliasvault.com to see if you like it.</li>
+<li>Self-host on a small VPS or home server with Docker.</li>
+<li>Back up your data and keep the stack updated.</li>
+</ol>
+<h2>2 mistakes to avoid</h2>
+<ol>
+<li>Running an install script without reading it.</li>
+<li>Exposing a self-hosted vault with no backup.</li>
+</ol>
+<p>_Not financial or security advice. Verify everything with the project's documentation._</p>
+<p>Sources: https://github.com/aliasvault/aliasvault (README, LICENSE.md, docker-compose.yml)</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
