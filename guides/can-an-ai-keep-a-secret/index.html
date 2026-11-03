@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Can an AI Keep a Secret? The Privacy Checklist | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>Can an AI Keep a Secret? The Privacy Checklist</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>A companion to the video. Every claim below comes from a public page or a published report. Policies change, so re-read the linked page before you rely on it.</p>
+<h2>The three places your words can go</h2>
+<ol>
+<li><b>The context window</b>: the conversation you are in. A fresh chat starts empty unless a memory feature is switched on.</li>
+<li><b>The company's servers</b>: chats are stored as records (history, abuse checks).</li>
+<li><b>Training</b>: some plans let the company use chats to teach future models.</li>
+</ol>
+<h2>The three questions to ask any AI tool</h2>
+<ol>
+<li>How long is my chat kept?</li>
+<li>Can a human read it?</li>
+<li>Is it used for training, and does my plan change the answer?</li>
+</ol>
+<h2>What the publishers say (as of the sources below)</h2>
+<ul>
+<li><b>OpenAI (ChatGPT app)</b>: Settings &gt; Data controls &gt; "Improve the model for everyone". Turning it off stops new conversations from being used for training. It does not delete existing chats, and archiving a chat does not change its training status. Thumbs up/down feedback may lead to the whole conversation being used. Temporary chats may be kept up to 30 days for safety. API Platform content and Business, Enterprise and Edu workspaces are not used for training by default. <a href="https://help.openai.com/en/articles/7730893-data-controls-faq">OpenAI Help Center: Data controls</a></li>
+<li><b>Anthropic (Claude Free, Pro, Max)</b>: terms updated 28 Aug 2025. Users choose whether chats can train future models. Training on: retention up to five years. Training off: 30 days. Turning it off does not remove data from models already trained. Deleting a conversation excludes it from future training. Team, Enterprise, Education, Gov and API use fall under commercial terms and are excluded. <a href="https://www.anthropic.com/news/updates-to-our-consumer-terms">Anthropic: Updates to our consumer terms</a></li>
+<li><b>Google (Gemini Apps)</b>: chats reviewed by human reviewers are kept up to three years, even if you delete your activity, and Google warns users not to enter confidential information they would not want a reviewer to see. <a href="https://www.notebookcheck.net/Google-Gemini-keeps-reviewed-chats-for-three-years.1389300.0.html">Coverage: Notebookcheck</a>, <a href="https://www.zdnet.com.au/article/dont-tell-your-ai-anything-personal-google-warns-in-new-gemini-privacy-notice/">ZDNet</a></li>
+</ul>
+<h2>When secrets escaped anyway</h2>
+<ul>
+<li><b>Samsung, April 2023</b>: engineers pasted internal code into ChatGPT; Economist Korea counted three cases (two source code, one meeting). Samsung banned generative AI on company devices in May 2023. <a href="https://www.techradar.com/news/samsung-bans-chatgpt-use-after-employee-leak">Bloomberg report via TechRadar</a></li>
+<li><b>ChatGPT bug, 20 March 2023</b>: a bug in an open-source Redis library showed some users other people's chat titles; payment details of 1.2% of active Plus subscribers in a nine-hour window may have been visible. OpenAI said the number of people whose data was actually seen was extremely low. <a href="https://openai.com/index/march-20-chatgpt-outage/">OpenAI post-mortem</a></li>
+<li><b>Training data extraction, Nov 2023</b>: Nasr, Carlini and colleagues asked ChatGPT to repeat a word forever; it eventually diverged and emitted memorized training data, some of it personal. <a href="https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html">Paper summary</a></li>
+<li><b>Court order, May 2025</b>: in the New York Times lawsuit a judge ordered OpenAI to preserve output logs that would otherwise be deleted; the order was later lifted with exceptions. <a href="https://engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html">Engadget</a></li>
+</ul>
+<h2>Tricking a model: prompt injection</h2>
+<ul>
+<li>Named by Simon Willison in Sept 2022: apps glue hidden instructions to untrusted user text, and the model cannot tell which is which. <a href="https://simonwillison.net/2022/Sep/12/prompt-injection/">simonwillison.net</a></li>
+<li>Feb 2023: Stanford student Kevin Liu got Bing Chat to reveal its hidden rules and codename "Sydney"; Microsoft confirmed the prompt was genuine. <a href="https://arstechnica.com/information-technology/2023/02/ai-powered-bing-chat-spills-its-secrets-via-prompt-injection-attack/">Ars Technica</a></li>
+<li>For builders: never put real secrets (passwords, API keys) in a system prompt. Keep them in server-side code.</li>
+</ul>
+<h2>A 2-minute routine</h2>
+<ol>
+<li>Open your AI tool's data settings and read what is switched on.</li>
+<li>Look up the retention period for your plan on the publisher's page.</li>
+<li>Check whether your plan is consumer or business: the rules differ.</li>
+</ol>
+<p>*This guide is general information about published policies, not legal or personal advice.*</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
