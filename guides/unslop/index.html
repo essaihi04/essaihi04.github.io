@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>unslop: setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>unslop: setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/heydamir/unslop">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is:</b> a skill for Claude Code and Codex that turns vibecoded, AI-looking UI into a designed interface. Created by Damir Sokolovsky (@heydamir). Licence: CC BY 4.0 (keep the credit).</p>
+<p><b>Repo:</b> https://github.com/heydamir/unslop</p>
+<h2>What it does</h2>
+<ul>
+<li>Finds the "tells" of AI-generated UI first: purple gradients, glows, emoji labels, shouty copy, uneven spacing.</li>
+<li>Proposes a direction (product, character, world, moments, signature) and waits for your answer before editing.</li>
+<li>Fixes the screen in nine passes, in order: spacing, color, icons, copy, type, layout, details, visuals, motion.</li>
+<li>Works with React, Vue, Svelte, Tailwind or plain HTML/CSS, and can start from a live URL.</li>
+</ul>
+<h2>Install (Claude Code)</h2>
+<pre><code>git clone https://github.com/heydamir/unslop
+mkdir -p ~/.claude/skills &amp;&amp; cp -r unslop/skills/unslop ~/.claude/skills/</code></pre>
+<p>For one project only, copy it into <code>.claude/skills/</code> inside that project.</p>
+<p>Optional (to snapshot a live site or make a story video): <code>npm install -D playwright</code>, <code>npx playwright install chromium</code>, plus ffmpeg on your PATH.</p>
+<h2>Use it</h2>
+<pre><code>/unslop this dashboard
+/unslop the hero of https://example.com</code></pre>
+<h2>3 ways to use it</h2>
+<ol>
+<li>Clean up a dashboard you built with an AI agent.</li>
+<li>Polish a landing page before you launch.</li>
+<li>Redesign a live page from just its link (it saves a copy to work on).</li>
+</ol>
+<h2>Our test</h2>
+<p>In a sandbox with no secrets, the clone and the copy into a skills folder took under one second. The skill folder holds SKILL.md (233 lines), reference files (signs of slop, tokens, visuals, effects) and two scripts (snapshot.mjs, story.mjs). We did not run the design passes themselves.</p>
+<p>Sources: README, LICENSE and SKILL.md of github.com/heydamir/unslop.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
