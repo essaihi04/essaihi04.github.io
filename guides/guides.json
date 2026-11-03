@@ -148,5 +148,10 @@
   "channel": "repo-radar",
   "title": "unslop: setup guide",
   "link": "https://github.com/heydamir/unslop"
+ },
+ "bombas-deal-sheet": {
+  "channel": "fallen-empires",
+  "title": "Bombas: the Shark Tank deal sheet",
+  "link": "https://en.wikipedia.org/wiki/Bombas"
  }
 }
