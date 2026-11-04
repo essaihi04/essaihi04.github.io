@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Penpot: the free, open-source Figma alternative | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Penpot: the free, open-source Figma alternative</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/penpot/penpot">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>A short setup and decision guide from the Repo Radar video "This Free GitHub Repo Replaces Figma (Penpot Tested)".</p>
+<h2>What it is</h2>
+<ul>
+<li><b>Penpot</b>: an open-source design and prototyping tool that runs in the browser.</li>
+<li>Made by <b>Kaleidos</b> (Madrid, Spain). First alpha: February 2, 2021 (unveiled at FOSDEM 2021).</li>
+<li>License: <b>Mozilla Public License 2.0</b> (MPL-2.0). Repository: <a href="https://github.com/penpot/penpot">github.com/penpot/penpot</a> (about 62K stars when we checked).</li>
+</ul>
+<h2>What we verified in the sandbox (Nov 4, 2026)</h2>
+<ul>
+<li>The shallow clone took about 10 seconds and is about 500 MB on disk.</li>
+<li>The <code>LICENSE</code> file is the Mozilla Public License 2.0.</li>
+<li><code>docker/images/docker-compose.yaml</code> lists 8 services: Penpot frontend, backend, exporter, admin console, MCP server, plus Postgres 15, Valkey 8.1 and Mailpit.</li>
+<li><b>Not verified:</b> the full stack was not started (no Docker engine in our sandbox), so we did not test a live server.</li>
+</ul>
+<h2>Three ways to use it</h2>
+<ol>
+<li><b>Hosted:</b> create an account on penpot.app. The Professional plan is listed at $0.</li>
+<li><b>Self-hosted with Docker:</b> follow the official self-hosting guide on penpot.app, which covers Docker, Kubernetes and Elestio. The compose file lives in <code>docker/images/</code> in the repository.</li>
+<li><b>Read the code:</b> frontend, backend, exporter, plugins and the MCP server are all in one repository.</li>
+</ol>
+<h2>Price check (public price pages, Nov 2026)</h2>
+<p>| Plan | Listed price |</p>
+<p>|---|---|</p>
+<p>| Figma Professional | $16 full seat, $12 dev seat, $3 collab seat, per month |</p>
+<p>| Figma Organization (annual) | $55 full seat, $25 dev seat, $5 collab seat, per month |</p>
+<p>| Penpot Professional | $0 |</p>
+<p>| Penpot Unlimited | $7 per editor per month, capped at $175 per month |</p>
+<p>Example for 10 full seats, one year, listed prices: Figma Professional $1,920; Figma Organization $6,600; Penpot Unlimited $840; Penpot Professional $0.</p>
+<p>Your plan, team size and taxes will differ. This is a comparison of public prices, not advice.</p>
+<h2>Three things to do</h2>
+<ol>
+<li>Open the hosted plan and import or rebuild one small screen to feel the editor.</li>
+<li>Check CSS Grid / Flex layout and design tokens on a real component.</li>
+<li>Before you move a team, list the Figma plugins you depend on.</li>
+</ol>
+<h2>Two mistakes to avoid</h2>
+<ul>
+<li>Assuming "free software" means zero effort: self-hosting means running a database and a mail service.</li>
+<li>Moving everyone at once. Pilot with one project first.</li>
+</ul>
+<h2>Glossary</h2>
+<ul>
+<li><b>MPL-2.0:</b> if you change Penpot's own files and share your version, you share those changes too. You can still use it at work.</li>
+<li><b>Design tokens:</b> colors, spacing and type sizes stored in one place that designs read from.</li>
+<li><b>MCP server:</b> a connector that lets AI tools talk to your designs.</li>
+<li><b>Self-hosting:</b> running the software on your own server.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>https://github.com/penpot/penpot</li>
+<li>https://penpot.app/pricing</li>
+<li>https://www.figma.com/pricing/</li>
+<li>https://en.wikipedia.org/wiki/Penpot</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

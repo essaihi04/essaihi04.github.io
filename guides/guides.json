@@ -183,5 +183,10 @@
   "channel": "fallen-empires",
   "title": "Sold Out, Then Dead: the one-page checklist",
   "link": null
+ },
+ "penpot-figma-alternative": {
+  "channel": "repo-radar",
+  "title": "Penpot: the free, open-source Figma alternative",
+  "link": "https://github.com/penpot/penpot"
  }
 }
