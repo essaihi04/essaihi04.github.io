@@ -193,5 +193,10 @@
   "channel": "fallen-empires",
   "title": "Plated: the Shark Tank deal sheet",
   "link": null
+ },
+ "specific-prompt-templates": {
+  "channel": "ai-explained",
+  "title": "Prompt templates that make AI answers specific",
+  "link": null
  }
 }
