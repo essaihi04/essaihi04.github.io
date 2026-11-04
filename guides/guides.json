@@ -188,5 +188,10 @@
   "channel": "repo-radar",
   "title": "Penpot: the free, open-source Figma alternative",
   "link": "https://github.com/penpot/penpot"
+ },
+ "plated": {
+  "channel": "fallen-empires",
+  "title": "Plated: the Shark Tank deal sheet",
+  "link": null
  }
 }
