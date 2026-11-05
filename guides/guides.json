@@ -213,5 +213,10 @@
   "channel": "repo-radar",
   "title": "Graphify: map any codebase into a queryable graph",
   "link": "https://github.com/Graphify-Labs/graphify"
+ },
+ "coffee-meets-bagel": {
+  "channel": "fallen-empires",
+  "title": "Coffee Meets Bagel: the Shark Tank deal sheet",
+  "link": null
  }
 }
