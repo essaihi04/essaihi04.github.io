@@ -203,5 +203,10 @@
   "channel": "repo-radar",
   "title": "RapidOCR: free offline OCR in Python",
   "link": "https://github.com/RapidAI/RapidOCR"
+ },
+ "ai-answer-checks": {
+  "channel": "ai-explained",
+  "title": "Is Your AI Answer Wrong? The 30-Second Checklist",
+  "link": null
  }
 }
