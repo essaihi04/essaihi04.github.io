@@ -208,5 +208,10 @@
   "channel": "ai-explained",
   "title": "Is Your AI Answer Wrong? The 30-Second Checklist",
   "link": null
+ },
+ "graphify-codebase-graph": {
+  "channel": "repo-radar",
+  "title": "Graphify: map any codebase into a queryable graph",
+  "link": "https://github.com/Graphify-Labs/graphify"
  }
 }

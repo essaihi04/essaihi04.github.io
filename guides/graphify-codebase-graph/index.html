@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Graphify: map any codebase into a queryable graph | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Graphify: map any codebase into a queryable graph</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/Graphify-Labs/graphify">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is.</b> Graphify (Graphify-Labs/graphify) is an open-source skill and CLI that turns a project (code, docs, PDFs, configs) into a knowledge graph you can query instead of grepping. It is not a vector index: no embeddings, no vector store.</p>
+<p>License: Apache-2.0. About 142,000 GitHub stars on 2026-11-05 (source: GitHub API snapshot).</p>
+<h2>Install (from the README)</h2>
+<p>Needs Python 3.10+ and uv (or pipx).</p>
+<pre><code>uv tool install graphifyy      # or: pipx install graphifyy</code></pre>
+<p>Note the double "y" in the package name: <code>graphifyy</code>.</p>
+<p>Then, in Claude Code, Cursor, Codex or Gemini CLI, type <code>/graphify</code> in your project.</p>
+<h2>What we measured (sandbox test, 2026-11-05)</h2>
+<ul>
+<li>Command: <code>graphify extract graphify --code-only</code> on the repo's own <code>graphify/</code> folder</li>
+<li>99 code files, 4,113 nodes, 9,380 edges, 190 communities</li>
+<li>About 10.6 seconds, no API key (code-only mode uses local AST parsing)</li>
+</ul>
+<h2>3 ways to use it</h2>
+<ol>
+<li>Map an unfamiliar repo before reading it.</li>
+<li>Ask how two parts of a codebase connect, then trace the path.</li>
+<li>Export the graph (<code>graphify export html</code>) to explore it visually.</li>
+</ol>
+<h2>Source</h2>
+<ul>
+<li>https://github.com/Graphify-Labs/graphify (README, Apache-2.0)</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
