@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>RapidOCR: free offline OCR in Python | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>RapidOCR: free offline OCR in Python</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/RapidAI/RapidOCR">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is:</b> RapidOCR (RapidAI/RapidOCR) turns images of text into text, on your own machine, using ONNX Runtime. No cloud service and no API key. Licence: Apache-2.0.</p>
+<h2>Install, step by step</h2>
+<ol>
+<li>Create a virtual environment: <code>python3 -m venv v</code></li>
+<li>Install the package: <code>./v/bin/pip install rapidocr_onnxruntime</code></li>
+<li>Run it on an image:</li>
+<pre><code>from rapidocr_onnxruntime import RapidOCR
+engine = RapidOCR()
+result, _ = engine(&quot;invoice.png&quot;)
+print([line[1] for line in result])</code></pre>
+</ol>
+<h2>What we tested</h2>
+<ul>
+<li>Sandbox with an empty environment (no tokens, no keys).</li>
+<li>One test image with two lines of text: "Invoice 2026-1105" and "Total: 249.90 USD".</li>
+<li>Both lines were read correctly in 1.4 seconds on a plain CPU (after the install).</li>
+</ul>
+<h2>3 ways to use it</h2>
+<ul>
+<li>Pull the text out of scanned receipts and invoices, locally.</li>
+<li>Make screenshots searchable.</li>
+<li>Add an offline OCR step to a script, with no paid API.</li>
+</ul>
+<h2>Good to know</h2>
+<ul>
+<li>This is one small test, not a benchmark: try it on your own images.</li>
+<li>Check the licence and README in the repository before using it in a project.</li>
+</ul>
+<p>Repository: https://github.com/RapidAI/RapidOCR</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

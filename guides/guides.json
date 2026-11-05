@@ -198,5 +198,10 @@
   "channel": "ai-explained",
   "title": "Prompt templates that make AI answers specific",
   "link": null
+ },
+ "rapidocr-offline": {
+  "channel": "repo-radar",
+  "title": "RapidOCR: free offline OCR in Python",
+  "link": "https://github.com/RapidAI/RapidOCR"
  }
 }
