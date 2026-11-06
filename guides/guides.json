@@ -228,5 +228,10 @@
   "channel": "fallen-empires",
   "title": "Bombas: the Shark Tank deal sheet",
   "link": "https://en.wikipedia.org/wiki/Bombas"
+ },
+ "ai-agents-explained": {
+  "channel": "ai-explained",
+  "title": "AI Agent Design Template",
+  "link": null
  }
 }

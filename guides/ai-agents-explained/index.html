@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Agent Design Template | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>AI Agent Design Template</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>A ready-to-copy way to design your first AI agent, from the video "AI Agents Explained in 10 Minutes".</p>
+<h2>The idea in one line</h2>
+<p>An AI agent is a language model that runs in a loop: <b>plan, act, observe, check</b>, with tools that touch the real world and a rule that says when to stop.</p>
+<h2>Workflow or agent? (Anthropic, Dec 2024)</h2>
+<ul>
+<li><b>Workflows</b> are systems where LLMs and tools are orchestrated through predefined code paths.</li>
+<li><b>Agents</b> are systems where LLMs dynamically direct their own processes and tool usage.</li>
+<li>Advice from the same guide: start with the simplest solution, and add an agent only when a fixed workflow is not enough.</li>
+</ul>
+<h2>The loop</h2>
+<ol>
+<li><b>Plan</b>: read the goal, pick the next step (only the next one).</li>
+<li><b>Act</b>: call a tool (search, read a file, run code, send an email).</li>
+<li><b>Observe</b>: read the real result, including errors.</li>
+<li><b>Check</b>: am I done? If yes, answer. If not, plan again.</li>
+</ol>
+<h2>Three questions before you build</h2>
+<ol>
+<li>Can the steps be written down in advance? Then use a workflow, not an agent.</li>
+<li>Does the task need the real world (search, files, code)? Then it needs tools.</li>
+<li>Can a wrong action be undone? If not, add a human approval step.</li>
+</ol>
+<h2>Copy-paste design template</h2>
+<pre><code>GOAL: &lt;one sentence&gt;
+TOOLS: &lt;tool 1&gt;, &lt;tool 2&gt;, &lt;tool 3&gt;
+STEP LIMIT: 10
+STOP WHEN: the goal is met, or the step limit is reached
+APPROVAL NEEDED FOR: anything that cannot be undone (sending, deleting, paying)</code></pre>
+<h2>Starter tasks</h2>
+<ul>
+<li>Sort your inbox into folders.</li>
+<li>Summarize five web pages into one page.</li>
+<li>Check a spreadsheet for duplicates.</li>
+</ul>
+<h2>Four ways agents fail</h2>
+<ul>
+<li>They loop forever: set a step limit.</li>
+<li>Errors compound: one wrong observation can poison later steps.</li>
+<li>They act in the real world: give the smallest set of permissions, keep a human approval step.</li>
+<li>They cost more: every loop is another model call.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Anthropic, "Building Effective Agents", 19 Dec 2024: https://www.anthropic.com/engineering/building-effective-agents</li>
+<li>Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models", arXiv 2210.03629: https://arxiv.org/abs/2210.03629</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
