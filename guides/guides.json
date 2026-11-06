@@ -233,5 +233,10 @@
   "channel": "ai-explained",
   "title": "AI Agent Design Template",
   "link": null
+ },
+ "8-trending-repos": {
+  "channel": "repo-radar",
+  "title": "8 trending GitHub repos: links and the exact commands I ran",
+  "link": "https://github.com/Graphify-Labs/graphify"
  }
 }

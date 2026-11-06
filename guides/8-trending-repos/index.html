@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>8 trending GitHub repos: links and the exact commands I ran | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>8 trending GitHub repos: links and the exact commands I ran</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/Graphify-Labs/graphify">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Every repo below was tested on <b>November 5 to 6, 2026</b>, inside a locked sandbox: a fresh temporary folder, an emptied environment (no tokens, no keys), a time limit on every command. Only commands documented by each README were run. Stars are from the GitHub API snapshot of November 5, 2026.</p>
+<h2>The scorecard</h2>
+<ol>
+<li><b>obra/superpowers</b> (MIT, 312,566 stars). Contents verified: 15 skills. The official install is a Claude Code plugin command, which could not be run in the sandbox.</li>
+<li><b>mattpocock/skills</b> (MIT, 313,670 stars). <code>npm install</code> took 4.7 s, clean. 39 skill files counted.</li>
+<li><b>heydamir/unslop</b> (CC-BY-4.0, 8,883 stars). The skill folder was copied clean. Snapshots and story videos need Playwright and ffmpeg: not tested.</li>
+<li><b>caru-ini/stack-diagram</b> (MIT, 1,782 stars). Installed in 6.7 s. Diagram generation not tested.</li>
+<li><b>wheresryan22/anatomy</b> (MIT, 24,979 stars). Installed in 6.6 s. Figure generation not tested.</li>
+<li><b>patch-gg/pixelfx</b> (MIT, 4,857 stars). Fully verified: install 3.4 s, then 90 frames rendered in 1.9 s.</li>
+<li><b>Graphify-Labs/graphify</b> (Apache-2.0, 142,553 stars). Fully verified: 24,763 nodes and 52,768 edges built from 1,159 files in 83 s.</li>
+<li><b>deepseek-ai/DeepInfer</b> (Apache-2.0, 25,410 stars). Broke in the sandbox: wrong Python version (3.11 instead of 3.12), install did not finish in 240 s.</li>
+</ol>
+<h2>Links</h2>
+<ul>
+<li>https://github.com/obra/superpowers</li>
+<li>https://github.com/mattpocock/skills</li>
+<li>https://github.com/heydamir/unslop</li>
+<li>https://github.com/caru-ini/stack-diagram</li>
+<li>https://github.com/wheresryan22/anatomy</li>
+<li>https://github.com/patch-gg/pixelfx</li>
+<li>https://github.com/Graphify-Labs/graphify</li>
+<li>https://github.com/deepseek-ai/DeepInfer</li>
+</ul>
+<h2>The commands, repo by repo</h2>
+<h3>pixelfx (Node 18+)</h3>
+<pre><code>git clone https://github.com/patch-gg/pixelfx.git
+cd pixelfx
+npm install
+node tools/render.mjs fire/campfire --sheet</code></pre>
+<p>Writes a contact sheet, a sprite sheet and a JSON file for the campfire effect.</p>
+<h3>graphify (Python 3.10+)</h3>
+<pre><code>python3 -m venv v
+v/bin/pip install .
+v/bin/graphify update .</code></pre>
+<p>Builds <code>graphify-out/graph.json</code>, <code>graph.html</code> and <code>GRAPH_REPORT.md</code> from code, locally, with no AI. The README's own recommended install is <code>uv tool install graphifyy</code>.</p>
+<h3>mattpocock/skills</h3>
+<pre><code>git clone https://github.com/mattpocock/skills.git
+cd skills
+npm install
+find skills -name SKILL.md | wc -l</code></pre>
+<h3>stack-diagram and anatomy (skills CLI)</h3>
+<pre><code>npx skills add caru-ini/stack-diagram -a claude-code
+npx skills add wheresryan22/anatomy -g -a claude-code</code></pre>
+<h3>unslop</h3>
+<p>Copy the folder <code>skills/unslop</code> into your agent's skills directory. For snapshots and story videos, install Playwright and ffmpeg first, as its README says.</p>
+<h3>DeepInfer</h3>
+<p>Do not expect this one to run on a laptop. Its README asks for Linux, GCC 13 or newer, Python 3.12, CUDA 13, and lists only NVIDIA SM100 GPUs or Huawei Ascend 950 NPUs as supported hardware.</p>
+<h2>3 things to do</h2>
+<ol>
+<li>Run a repo's own documented command for 60 seconds before you read about it for an hour.</li>
+<li>Check the license before you build on it. unslop is CC-BY-4.0, a content license, not MIT.</li>
+<li>Check the Python and Node versions in the README first. It would have saved me one failure.</li>
+</ol>
+<h2>2 mistakes to avoid</h2>
+<ol>
+<li>Treating stars as proof that something runs.</li>
+<li>Treating "installed" as "works": a skill you can install is not a skill you have tried.</li>
+</ol>
+<h2>Glossary</h2>
+<ul>
+<li><b>Skill:</b> a folder with a text file of instructions that an AI coding assistant loads when the task fits.</li>
+<li><b>Sandbox:</b> a throwaway folder and an emptied environment, so a repo you test cannot see your keys.</li>
+<li><b>Sprite sheet:</b> one image holding every frame of an animation, used by game engines.</li>
+<li><b>Knowledge graph:</b> nodes (functions, files) and edges (calls, imports) you can query.</li>
+</ul>
+<p>*Stars and facts are as of November 5 to 6, 2026. Repos change fast. This is not investment, legal or security advice.*</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
