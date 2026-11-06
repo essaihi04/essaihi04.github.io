@@ -243,5 +243,10 @@
   "channel": "repo-radar",
   "title": "Sync-in: self-hosted file sync, quick guide",
   "link": "https://github.com/Sync-in/server"
+ },
+ "grinds-deal-died": {
+  "channel": "fallen-empires",
+  "title": "The Grinds Deal Sheet: a Shark Tank deal that died, and the company that didn't",
+  "link": null
  }
 }
