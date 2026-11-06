@@ -238,5 +238,10 @@
   "channel": "repo-radar",
   "title": "8 trending GitHub repos: links and the exact commands I ran",
   "link": "https://github.com/Graphify-Labs/graphify"
+ },
+ "sync-in": {
+  "channel": "repo-radar",
+  "title": "Sync-in: self-hosted file sync, quick guide",
+  "link": "https://github.com/Sync-in/server"
  }
 }
