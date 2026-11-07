@@ -253,5 +253,10 @@
   "channel": "ai-explained",
   "title": "Explain Any AI Idea With an Analogy: Prompt Pack",
   "link": null
+ },
+ "photocraft": {
+  "channel": "repo-radar",
+  "title": "PhotoCraft: setup guide",
+  "link": "https://github.com/storytold/photocraft"
  }
 }

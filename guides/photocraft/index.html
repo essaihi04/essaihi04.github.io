@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>PhotoCraft: setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>PhotoCraft: setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/storytold/photocraft">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>What it is:</b> an open-source image editor written in pure Rust. Per its README: layers, masks, adjustment layers, layer styles, type, vectors, brushes and PSD files, in a native app. Status: <b>early alpha</b> (README). License: MIT or Apache-2.0.</p>
+<p><b>Link:</b> https://github.com/storytold/photocraft</p>
+<h2>What we tested</h2>
+<ul>
+<li>Cloned the repo into a sandbox (no secrets in the environment).</li>
+<li>Ran <code>cargo test -p photocraft-psd</code> (the PSD file crate): <b>222 unit/integration tests + 1 doctest passed, 0 failed</b>, about 55 s from a cold clone, compile included.</li>
+<li>We did not test the desktop app itself or the whole workspace.</li>
+<li>Stars: 71,897 on 2026-10-23, about 3 weeks after creation (GitHub API).</li>
+</ul>
+<h2>Install (from the README)</h2>
+<ol>
+<li>Install Rust: https://rustup.rs</li>
+<li><code>git clone https://github.com/storytold/photocraft &amp;&amp; cd photocraft</code></li>
+<li>Run the app: <code>cargo run --release -p photocraft -- image.psd</code></li>
+<li>Run the tests: <code>cargo test --workspace</code></li>
+<li>Linux may need system libraries for the UI; check the README.</li>
+</ol>
+<h2>3 things to try</h2>
+<ol>
+<li>Open a PSD you own and inspect its layer tree.</li>
+<li>Add a Curves adjustment layer and save in the native <code>.pcraft</code> format.</li>
+<li>Run the tests of one crate (<code>cargo test -p photocraft-psd</code>) and read how PSD round trips are checked.</li>
+</ol>
+<h2>Honest verdict</h2>
+<p>Impressive engineering and a lot of tests, but the README itself says early alpha: don't replace your main editor yet.</p>
+<p>Sources: the repository README and Cargo files; GitHub API data (stars); our own sandbox test run.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
