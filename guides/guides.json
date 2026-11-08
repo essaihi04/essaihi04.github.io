@@ -258,5 +258,10 @@
   "channel": "repo-radar",
   "title": "PhotoCraft: setup guide",
   "link": "https://github.com/storytold/photocraft"
+ },
+ "spikeball-deal": {
+  "channel": "fallen-empires",
+  "title": "Spikeball and the Shark Tank deal that never closed",
+  "link": null
  }
 }
