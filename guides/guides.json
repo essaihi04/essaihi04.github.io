@@ -263,5 +263,10 @@
   "channel": "fallen-empires",
   "title": "Spikeball and the Shark Tank deal that never closed",
   "link": null
+ },
+ "uptime-kuma": {
+  "channel": "repo-radar",
+  "title": "Uptime Kuma: setup steps",
+  "link": "https://github.com/louislam/uptime-kuma"
  }
 }
