@@ -283,5 +283,10 @@
   "channel": "fallen-empires",
   "title": "Cousins Maine Lobster: the deal sheet",
   "link": "https://www.entrepreneur.com/article/278818"
+ },
+ "tsmc-chip-map": {
+  "channel": "ai-explained",
+  "title": "The AI Chip Map: Design, Make, Machine",
+  "link": null
  }
 }
