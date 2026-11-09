@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>satmux: make airplane Wi-Fi usable | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>satmux: make airplane Wi-Fi usable</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/Th0rgal/satmux">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>Repo:</b> <a href="https://github.com/Th0rgal/satmux">Th0rgal/satmux</a> · MIT license · pure Python 3, no dependencies.</p>
+<h2>What it does</h2>
+<p>Inflight Wi-Fi over geostationary satellites (about 620 ms round trip, per the README) often drops connections to sites like github.com. satmux keeps 12 warm TCP connections open on port 8444 to a small Linux server near the satellite ground station, and relays your traffic through them with zlib compression.</p>
+<h2>Install, step by step</h2>
+<ol>
+<li>On the laptop: <code>git clone https://github.com/Th0rgal/satmux.git &amp;&amp; cd satmux</code></li>
+<li>Make a key: <code>openssl rand -hex 32 &gt; mux.psk &amp;&amp; chmod 600 mux.psk</code></li>
+<li>Rent a small Linux VM near the satellite ground station (README: about $0.01 to $0.03 per hour, Python 3.9+, TCP port 8444 open).</li>
+<li>Copy <code>satmux.py</code> and <code>mux.psk</code> to the VM and start the server: <code>SATMUX_PSK=$(cat mux.psk) python3 satmux.py server --port 8444</code></li>
+<li>On the laptop, start the client: <code>SATMUX_PSK=$(cat mux.psk) python3 satmux.py client --host &lt;SERVER_IP&gt; --port 8444 --carriers 12</code></li>
+<li>Point apps at the local SOCKS5 proxy <code>127.0.0.1:1080</code> or the HTTP proxy <code>127.0.0.1:8080</code>. On macOS, <code>./bin/satmux-macos on &lt;SERVER_IP&gt;</code> does it for you; <code>./bin/satmux-macos off</code> undoes it after landing.</li>
+</ol>
+<h2>What we tested (and what we did not)</h2>
+<p>In our cloud sandbox we ran the server and client on localhost, with 4 carriers, and fetched a local page through the SOCKS5 proxy: HTTP 200. We did <b>not</b> test on a plane or a satellite link. The flight numbers in the video (3 of 6 sites failed on raw cabin Wi-Fi, 0 of 6 with satmux; 19.13 s to 5.35 s) are the author's own measurements from the README.</p>
+<h2>3 uses</h2>
+<ul>
+<li>A coding session or <code>git</code> over cabin Wi-Fi that keeps resetting.</li>
+<li>Loading docs and package registries (PyPI, MDN) on a high-latency link.</li>
+<li>Any slow link where each new connection pays several round trips.</li>
+</ul>
+<h2>Limits</h2>
+<ul>
+<li>The speed of light stays: one satellite hop is still about 580 to 650 ms.</li>
+<li>Your per-seat bandwidth cap still applies.</li>
+<li>It uses your paid cabin Wi-Fi session; it does not bypass captive portals.</li>
+</ul>
+<p>Sources: the satmux README and LICENSE (github.com/Th0rgal/satmux); geostationary orbit altitude 35,786 km.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

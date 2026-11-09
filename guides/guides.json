@@ -288,5 +288,10 @@
   "channel": "ai-explained",
   "title": "The AI Chip Map: Design, Make, Machine",
   "link": null
+ },
+ "satmux": {
+  "channel": "repo-radar",
+  "title": "satmux: make airplane Wi-Fi usable",
+  "link": "https://github.com/Th0rgal/satmux"
  }
 }
