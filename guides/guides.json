@@ -293,5 +293,10 @@
   "channel": "repo-radar",
   "title": "satmux: make airplane Wi-Fi usable",
   "link": "https://github.com/Th0rgal/satmux"
+ },
+ "scrub-daddy-deal": {
+  "channel": "fallen-empires",
+  "title": "Scrub Daddy: the Shark Tank deal sheet",
+  "link": null
  }
 }
