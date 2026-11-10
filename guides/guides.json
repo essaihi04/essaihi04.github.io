@@ -303,5 +303,10 @@
   "channel": "ai-explained",
   "title": "Your Free Brain Stack: Step-by-Step Guide",
   "link": null
+ },
+ "free-apps-replace-subscriptions": {
+  "channel": "repo-radar",
+  "title": "5 free open source apps that replace $800 a year of subscriptions",
+  "link": "https://github.com/Stirling-Tools/Stirling-PDF"
  }
 }

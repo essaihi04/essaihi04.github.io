@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>5 free open source apps that replace $800 a year of subscriptions | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>5 free open source apps that replace $800 a year of subscriptions</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/Stirling-Tools/Stirling-PDF">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Setup steps for the five apps tested in the Repo Radar video (November 10, 2026). Every app was installed in an emptied sandbox, using only the commands from its own README. Prices come from the official pricing pages, checked on November 10, 2026. Prices change: check them yourself before you cancel anything.</p>
+<h2>The scoreboard</h2>
+<ul>
+<li><b>Piper</b> replaces ElevenLabs Starter: $6/month</li>
+<li><b>faster-whisper</b> replaces Otter Pro (billed monthly): $16.99/month</li>
+<li><b>rembg</b> replaces remove.bg Personal (40 credits): $9/month</li>
+<li><b>Actual Budget</b> replaces YNAB (billed monthly): $14.99/month</li>
+<li><b>Stirling PDF</b> replaces Adobe Acrobat Pro (annual plan, billed monthly): $19.99/month</li>
+<li><b>Total:</b> $66.97/month, about $803 a year</li>
+</ul>
+<h2>1. Piper: text to speech on your own computer</h2>
+<p>Repo: <a href="https://github.com/OHF-Voice/piper1-gpl">OHF-Voice/piper1-gpl</a> (GPL-3.0). The older repo rhasspy/piper is archived.</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install piper-tts
+.venv/bin/python -m piper.download_voices en_US-lessac-medium
+echo &#x27;Hello from Piper.&#x27; | .venv/bin/python -m piper -m en_US-lessac-medium -f hello.wav</code></pre>
+<p>Our run: install 10.5 s, voice download (63 MB) 1.7 s, first sentence 2.9 s. No graphics card needed.</p>
+<h2>2. faster-whisper: speech to text, offline</h2>
+<p>Repo: <a href="https://github.com/SYSTRAN/faster-whisper">SYSTRAN/faster-whisper</a> (MIT).</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install faster-whisper</code></pre>
+<p>Then, in Python:</p>
+<pre><code>from faster_whisper import WhisperModel
+model = WhisperModel(&quot;tiny.en&quot;, device=&quot;cpu&quot;, compute_type=&quot;int8&quot;)
+segments, info = model.transcribe(&quot;audio.mp3&quot;)
+for s in segments:
+    print(f&quot;[{s.start:.1f}s -&gt; {s.end:.1f}s] {s.text}&quot;)</code></pre>
+<p>Our run: install 18.9 s; 11 s of audio transcribed in 2.4 s on a CPU, model download included. Use a bigger model (<code>small</code>, <code>medium</code>) for better accuracy.</p>
+<h2>3. rembg: background removal</h2>
+<p>Repo: <a href="https://github.com/danielgatis/rembg">danielgatis/rembg</a> (MIT).</p>
+<pre><code>python3 -m venv .venv
+.venv/bin/pip install &quot;rembg[cpu,cli]&quot;
+.venv/bin/rembg i input.jpg output.png</code></pre>
+<p>Our run: install 48.1 s; the first image took 89 s because the default model (1.02 GB) downloads once. Batch a whole folder with <code>rembg p input_folder output_folder</code>.</p>
+<h2>4. Actual Budget: envelope budgeting</h2>
+<p>Repo: <a href="https://github.com/actualbudget/actual">actualbudget/actual</a> (MIT).</p>
+<pre><code>mkdir actual &amp;&amp; cd actual
+npm init -y
+npm install @actual-app/sync-server
+npx actual-server</code></pre>
+<p>Then open <code>http://localhost:5006</code> in your browser. Our run: install 11.9 s, server started and listened on port 5006. Our sandbox refused local connections, so we could not open the page inside it. Docker images are also documented in the README.</p>
+<h2>5. Stirling PDF: 50+ PDF tools you host yourself</h2>
+<p>Repo: <a href="https://github.com/Stirling-Tools/Stirling-PDF">Stirling-Tools/Stirling-PDF</a>. Core under MIT; some folders (for example <code>app/proprietary/</code>) have their own license.</p>
+<p>The simplest route from the README:</p>
+<pre><code>docker run -p 8080:8080 docker.stirlingpdf.com/stirlingtools/stirling-pdf</code></pre>
+<p>Then open <code>http://localhost:8080</code>. Building from source (<code>./gradlew bootJar</code>) took 2 min 38 s in our sandbox. The jar needs Java 25: on Java 21 it stops with <code>UnsupportedClassVersionError</code>.</p>
+<h2>What you take on when you self-host</h2>
+<ul>
+<li><b>Updates:</b> nobody pushes them to you. Pull new versions yourself.</li>
+<li><b>Backups:</b> if your data lives on your server, back up that server.</li>
+<li><b>Support:</b> no help desk. Use the GitHub issues page of each repo.</li>
+</ul>
+<p>This guide is information, not financial advice.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
