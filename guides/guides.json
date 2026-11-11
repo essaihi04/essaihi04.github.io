@@ -318,5 +318,10 @@
   "channel": "repo-radar",
   "title": "Linux: from a Helsinki hobby to the world's kernel",
   "link": "https://github.com/torvalds/linux"
+ },
+ "scholly-shark-tank": {
+  "channel": "fallen-empires",
+  "title": "Scholly on Shark Tank: the deal sheet",
+  "link": null
  }
 }
