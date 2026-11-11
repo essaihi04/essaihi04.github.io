@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Token Cheat Sheet: How AI Reads Your Words | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>Token Cheat Sheet: How AI Reads Your Words</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><h2>What a token is</h2>
+<ul>
+<li>A token is a chunk of text: a whole word, part of a word, a space plus a word, or a punctuation mark.</li>
+<li>Before a model reads your message, a <b>tokenizer</b> splits it into tokens and turns each one into a number (an ID).</li>
+<li>Example (GPT-4 tokenizer, <code>cl100k_base</code>): <code>strawberry</code> → <code>str</code> + <code>aw</code> + <code>berry</code> → IDs 496, 675, 15717.</li>
+<li>That is why models have historically struggled with letter-level tasks like counting the R's in "strawberry": they see chunks, not letters.</li>
+</ul>
+<h2>Rules of thumb (English)</h2>
+<ul>
+<li>1 token ≈ 4 characters.</li>
+<li>1 token ≈ ¾ of a word.</li>
+<li>100 tokens ≈ 75 words.</li>
+<li>These are estimates. Other languages have different ratios.</li>
+</ul>
+<h2>Why tokens matter to you</h2>
+<ol>
+<li><b>Memory (context window):</b> a model can only see a fixed number of tokens at once. GPT-4o: 128,000 tokens, about 96,000 English words. Text beyond the limit is not seen.</li>
+<li><b>Cost:</b> API usage is billed per token, input and output.</li>
+<li><b>Language:</b> the same idea can cost far more tokens in some languages. "I love pizza." = 4 tokens in the GPT-4 tokenizer; the same sentence in Hindi (मुझे पिज़्ज़ा पसंद है।) = 26 tokens. The newer GPT-4o tokenizer (<code>o200k_base</code>) brings the Hindi sentence down to 11.</li>
+</ol>
+<h2>Count tokens yourself (free)</h2>
+<ul>
+<li>OpenAI's web Tokenizer tool: <a href="https://platform.openai.com/tokenizer">platform.openai.com/tokenizer</a></li>
+<li>In Python:</li>
+<pre><code>pip install tiktoken
+python -c &quot;import tiktoken; e=tiktoken.get_encoding(&#x27;cl100k_base&#x27;); print(len(e.encode(&#x27;I love pizza.&#x27;)))&quot;</code></pre>
+</ul>
+<h2>3 habits that save tokens</h2>
+<ol>
+<li>Paste only the part of a document the AI needs, not the whole file.</li>
+<li>Start a fresh chat for a new task: long chats fill the context window.</li>
+<li>Ask for a length ("in 5 bullet points"): output tokens count too.</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li>OpenAI Help Center, "What are tokens and how to count them": <a href="https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them">help.openai.com</a></li>
+<li>OpenAI model page, GPT-4o (128,000-token context window): <a href="https://developers.openai.com/api/docs/models/gpt-4o">developers.openai.com</a></li>
+<li>tiktoken, OpenAI's open-source tokenizer (token counts measured on 2026-11-11): <a href="https://github.com/openai/tiktoken">github.com/openai/tiktoken</a></li>
+<li>TechCrunch, "Why AI can't spell 'strawberry'" (2024): <a href="https://techcrunch.com/2024/08/27/why-ai-cant-spell-strawberry/">techcrunch.com</a></li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
