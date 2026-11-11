@@ -313,5 +313,10 @@
   "channel": "ai-explained",
   "title": "Token Cheat Sheet: How AI Reads Your Words",
   "link": null
+ },
+ "linux-born-in-finland": {
+  "channel": "repo-radar",
+  "title": "Linux: from a Helsinki hobby to the world's kernel",
+  "link": "https://github.com/torvalds/linux"
  }
 }
