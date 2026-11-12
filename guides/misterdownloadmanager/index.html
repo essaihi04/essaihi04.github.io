@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Mister Download Manager: setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Mister Download Manager: setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/anefzaoui/misterdownloadmanager">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Free, open source download manager written in Rust, by Ahmed Nefzaoui. License: GPL-3.0-or-later.</p>
+<p>Repository: <a href="https://github.com/anefzaoui/misterdownloadmanager">github.com/anefzaoui/misterdownloadmanager</a></p>
+<h2>What it does</h2>
+<ul>
+<li>Splits one download into pieces and fetches them over several connections at once (8 by default, 1 to 128).</li>
+<li>Pauses and resumes: an interrupted download continues from where it stopped (a <code>.mdm.json</code> state file sits next to it).</li>
+<li>Checks the finished file against a hash you give it (MD5, SHA-1, SHA-256, SHA-512, CRC32).</li>
+<li>Windows, macOS and Linux, with a window app, browser extensions and a command line.</li>
+</ul>
+<h2>Our test (12 Nov 2026, 4-core cloud VM, one run each)</h2>
+<ul>
+<li>File: Debian 13.7.0 netinst ISO, 756 MB.</li>
+<li>curl, one connection: 38.5 s. Mister Download Manager, 8 connections: 9.1 s.</li>
+<li>Download stopped at 2.2 %, then <code>resume</code>: finished in 6.5 s.</li>
+<li>All three files matched Debian's official SHA-256.</li>
+<li>Building from source took 10 min 13 s. Your speed depends on your line and the server.</li>
+</ul>
+<h2>Install</h2>
+<ol>
+<li>Windows: take the <code>...-setup.exe</code> from the <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest">releases page</a>, or run <code>winget install AhmedNefzaoui.MisterDownloadManager</code>.</li>
+<li>Linux: <code>.deb</code> (Ubuntu, Debian, Mint), <code>.rpm</code> (Fedora, openSUSE) or <code>.AppImage</code> from the same releases page.</li>
+<li>macOS: the macOS file from the releases page.</li>
+<li>Early versions are not code-signed yet: your system may warn you the first time. Only download from the official repository.</li>
+</ol>
+<h2>Build it from source (what we did)</h2>
+<ol>
+<li>Install Rust (stable, recent: the project asks for 1.98 or newer), plus <code>cmake</code> and <code>libclang</code>.</li>
+<li><code>git clone https://github.com/anefzaoui/misterdownloadmanager</code></li>
+<li><code>cd misterdownloadmanager</code></li>
+<li><code>cargo build --release -p mdm-app -p mdm-cli</code></li>
+<li>The programs land in <code>target/release/</code>.</li>
+</ol>
+<h2>3 ways to use it</h2>
+<ol>
+<li>Big file, faster: <code>misterdownloadmanager-cli get &lt;url&gt; -o ~/Downloads</code></li>
+<li>Verified download: <code>misterdownloadmanager-cli get &lt;url&gt; --checksum sha256:&lt;hash from the site&gt;</code></li>
+<li>Bad connection: press Ctrl+C to pause, then <code>misterdownloadmanager-cli resume "&lt;file&gt;.mdm.json"</code></li>
+</ol>
+<h2>Good to know</h2>
+<ul>
+<li>More connections help when the server limits speed per connection. If your own internet line is the limit, the gain is small.</li>
+<li>Some servers allow few connections: lower it with <code>-c 2</code>.</li>
+<li>Download only files you have the right to download.</li>
+</ul>
+<p>Sources: the project's README, Cargo.toml and command-line help; Debian SHA256SUMS; our sandbox test.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

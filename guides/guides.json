@@ -343,5 +343,10 @@
   "channel": "fallen-empires",
   "title": "Lovepop on Shark Tank: the deal sheet",
   "link": null
+ },
+ "misterdownloadmanager": {
+  "channel": "repo-radar",
+  "title": "Mister Download Manager: setup guide",
+  "link": "https://github.com/anefzaoui/misterdownloadmanager"
  }
 }
