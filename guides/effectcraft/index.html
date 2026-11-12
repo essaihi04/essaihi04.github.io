@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>EffectCraft: a free motion graphics studio in Rust | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>EffectCraft: a free motion graphics studio in Rust</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/storytold/effectcraft">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>Repo:</b> <a href="https://github.com/storytold/effectcraft">github.com/storytold/effectcraft</a> · License: MIT OR Apache-2.0 · by the ArtCraft team and EffectCraft contributors.</p>
+<h2>What it is</h2>
+<ul>
+<li>An open-source compositor for animated titles, motion graphics and visual effects: compositions, layers, keyframes, a graph editor, expressions, 3D cameras and lights, and a render queue.</li>
+<li>308 built-in effects (blur, color correction, distort, particles, glow, transitions…) and all nine layer styles.</li>
+<li>Video encoders written in pure Rust (H.264, ProRes, HEVC, VP9, AV1): <b>no FFmpeg inside</b>.</li>
+<li>Lottie import and export, readable JSON project files (<code>.ecproj</code>), and a headless CLI plus an MCP server for AI agents.</li>
+<li>First commit: 1 October 2026. Status: <b>alpha</b>. Its own parity document estimates about 91% of the tracked features exist, but only about 45% readiness for professional client work.</li>
+</ul>
+<h2>Install (build from source)</h2>
+<p>You need Rust 1.95 or newer (<a href="https://rustup.rs/">rustup.rs</a>).</p>
+<pre><code>git clone https://github.com/storytold/effectcraft
+cd effectcraft
+cargo build --release -p effectcraft-cli</code></pre>
+<p>Then render the built-in demo, with no window and no GPU (headless renders run on the CPU):</p>
+<pre><code>./target/release/effectcraft-cli render --out intro.mp4</code></pre>
+<p>Prefer an installer? The project's Releases page lists builds for macOS, Windows, Linux (AppImage, Flatpak, deb, rpm), FreeBSD and the web.</p>
+<h2>3 things to try</h2>
+<ol>
+<li><b>Open the desktop app with the demo:</b> <code>cargo run --release -p effectcraft -- --demo</code></li>
+<li><b>Render one frame as a PNG:</b> <code>effectcraft-cli render-frame --time 3 --out frame.png</code></li>
+<li><b>Let an AI agent drive it:</b> <code>effectcraft-cli mcp --demo</code> starts an MCP server (the repo ships a ready <code>.mcp.json</code>).</li>
+</ol>
+<h2>What we saw in our sandbox test</h2>
+<ul>
+<li>Machine: 4-core cloud server, no graphics card, clean sandbox (no keys).</li>
+<li>Build: <code>cargo build --release -p effectcraft-cli</code> finished in 9 min 54 s (we turned off link-time optimisation to save time).</li>
+<li>Render: <code>effectcraft-cli render --out intro.mp4</code> wrote 300 frames of 1920×1080 H.264 (10 s of video) in 20.1 s, on the CPU.</li>
+</ul>
+<h2>Honest caveats</h2>
+<ul>
+<li>Alpha software: the team says it is not yet recommended for production client work.</li>
+<li>macOS is the most tested platform; Linux and Windows users have reported basic interaction bugs.</li>
+<li>After Effects projects (<code>.aep</code>) cannot be opened.</li>
+</ul>
+<p>Sources: the repository README, <code>docs/agents.md</code> and <code>docs/target-app-parity.md</code> (read on 12 November 2026).</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

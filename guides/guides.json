@@ -333,5 +333,10 @@
   "channel": "fallen-empires",
   "title": "The Lip Bar: the Shark Tank deal sheet",
   "link": null
+ },
+ "effectcraft": {
+  "channel": "repo-radar",
+  "title": "EffectCraft: a free motion graphics studio in Rust",
+  "link": "https://github.com/storytold/effectcraft"
  }
 }
