@@ -338,5 +338,10 @@
   "channel": "repo-radar",
   "title": "EffectCraft: a free motion graphics studio in Rust",
   "link": "https://github.com/storytold/effectcraft"
+ },
+ "lovepop": {
+  "channel": "fallen-empires",
+  "title": "Lovepop on Shark Tank: the deal sheet",
+  "link": null
  }
 }
