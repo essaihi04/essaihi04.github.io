@@ -348,5 +348,10 @@
   "channel": "repo-radar",
   "title": "Mister Download Manager: setup guide",
   "link": "https://github.com/anefzaoui/misterdownloadmanager"
+ },
+ "ai-chips-taiwan": {
+  "channel": "ai-explained",
+  "title": "The AI Chip Map: Why Almost Every AI Chip Is Made in Taiwan",
+  "link": null
  }
 }
