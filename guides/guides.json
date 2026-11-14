@@ -358,5 +358,10 @@
   "channel": "repo-radar",
   "title": "India vs the US on GitHub: the Octoverse 2026 numbers + 4 open source tools from India",
   "link": "https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/"
+ },
+ "how-ai-works-next-word": {
+  "channel": "ai-explained",
+  "title": "How AI Works: The 1-Page Cheat Sheet",
+  "link": null
  }
 }

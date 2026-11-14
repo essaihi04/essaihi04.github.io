@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>How AI Works: The 1-Page Cheat Sheet | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>How AI Works: The 1-Page Cheat Sheet</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>A large language model (LLM) like ChatGPT, Claude, Gemini or Llama does one thing: <b>it guesses the next piece of text</b>, over and over.</p>
+<h2>The core idea in 4 steps</h2>
+<ol>
+<li><b>Your text is cut into tokens.</b> A token is a chunk of text, about 3/4 of an English word (OpenAI).</li>
+<li><b>The model reads every token so far</b>: your whole conversation, not just the last few words.</li>
+<li><b>It scores every possible next token</b> and picks one.</li>
+<li><b>It adds that token and starts again.</b> One token at a time, that is the whole answer.</li>
+</ol>
+<h2>Phone keyboard vs. ChatGPT</h2>
+<p>| | Phone keyboard | Large language model |</p>
+<p>|---|---|---|</p>
+<p>| Job | Guess the next word | Guess the next token |</p>
+<p>| Model size | Tiny, runs on your phone | Huge, usually runs in a data center |</p>
+<p>| What it reads | What you are typing | Your entire conversation |</p>
+<p>| Training text | Small | Trillions of tokens |</p>
+<h2>The scale, in numbers</h2>
+<ul>
+<li>Meta's <b>Llama 3</b> was pretrained on <b>over 15 trillion tokens</b> of public text (Meta AI, April 2024).</li>
+<li>15 trillion tokens ≈ 11 trillion words. At the average adult reading speed of <b>238 words per minute</b> (Brysbaert, 2019), a person reading nonstop would need <b>about 90,000 years</b>.</li>
+</ul>
+<h2>What nobody taught it</h2>
+<p>During pretraining, the model is never given grammar rules, a fact list or coding lessons. It only practices one game: predict the next token. Grammar, facts and code patterns are what it picked up along the way. (Chat assistants then get extra training on example conversations.)</p>
+<h2>3 things this explains</h2>
+<ul>
+<li><b>Why answers vary</b>: each word is a pick among likely options, so the same question can get different answers.</li>
+<li><b>Why AI can sound sure and still be wrong</b>: a likely-sounding next word is not a checked fact. Verify anything important.</li>
+<li><b>Why long chats get forgetful</b>: the model can only read a limited number of tokens at once (its context window).</li>
+</ul>
+<h2>Try it yourself (free)</h2>
+<ul>
+<li>Ask any chatbot: *"Finish this sentence 3 different ways: I'll be there in…"* and compare.</li>
+<li>Paste your text into OpenAI's free tokenizer page to see how it is cut into tokens.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Meta AI, "Introducing Meta Llama 3" (2024): https://ai.meta.com/blog/meta-llama-3/</li>
+<li>OpenAI Help Center, "What are tokens and how to count them": https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them</li>
+<li>Brysbaert, M. (2019), "How many words do we read per minute?", Journal of Memory and Language 109: https://doi.org/10.1016/j.jml.2019.104047</li>
+<li>Radford et al. (2019), "Language Models are Unsupervised Multitask Learners", OpenAI.</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
