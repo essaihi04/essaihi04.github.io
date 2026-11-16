@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Craft Anything: setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Craft Anything: setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/storytold/craft-anything">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Repo: <a href="https://github.com/storytold/craft-anything">storytold/craft-anything</a> · License: MIT OR Apache-2.0 · Version tested: 0.6.1 (early alpha) · 34,497 stars on 2026-11-16.</p>
+<h2>What it does</h2>
+<p>Craft Anything studies a website, app, game or file with real inspection tools, has a coding agent build your own version, then compares the build with the original and lists what does not match yet. It works in four steps: <b>Study → Build → Check → Ready</b>. It is written in Rust and ships a desktop app, a CLI and an MCP server ("320 tools, each one a CLI command and an MCP tool", per the README).</p>
+<h2>What we tested (Repo Radar sandbox, 2026-11-16)</h2>
+<ul>
+<li><code>cargo build -p craft-anything-cli</code>: compiled in 6 min 05 s on 4 cores.</li>
+<li><code>craft-anything-cli doctor</code>: <b>healthy</b>; the built-in MCP server answered its self-test.</li>
+<li><code>craft-anything-cli triage /bin/ls</code>: <b>refused</b> by default. Clean room mode never reads inside the original.</li>
+<li><code>craft-anything-cli --deep triage /bin/ls</code>: "ls is a program for Linux, built for x86_64 (64-bit). Its internal names were removed (stripped)", plus its 2 libraries and entry point.</li>
+<li>Not tested: a full rebuild. It needs a coding agent signed in (Claude Code is the builder that works today, per the README).</li>
+</ul>
+<h2>Install</h2>
+<ol>
+<li>Install Rust <b>1.97 or newer</b> (<code>rustup update</code>).</li>
+<li>Clone the repo:</li>
+<pre><code>git clone https://github.com/storytold/craft-anything
+cd craft-anything</code></pre>
+<li>Desktop app: <code>cargo run --release -p craft-anything</code></li>
+</ol>
+<p>   (on Debian/Ubuntu the README lists extra system packages for the window toolkit).</p>
+<ol>
+<li>CLI: <code>cargo install --path apps/craft-anything-cli</code></li>
+<li>Check the install: <code>craft-anything-cli doctor</code></li>
+</ol>
+<p>Prebuilt installers for Windows, macOS, Linux and FreeBSD are on the repo's Releases page (still alpha).</p>
+<h2>3 ways to use it</h2>
+<ol>
+<li><b>Look inside a program, no AI needed:</b> <code>craft-anything-cli --deep triage &lt;file&gt;</code> gives a plain-English summary, then suggests next tools (<code>native-functions-list</code>, <code>native-strings-find</code>…). <code>craft-anything-cli commands</code> lists every tool.</li>
+<li><b>Rebuild a website or a game:</b> <code>craft-anything-cli rebuild https://example.com "Recreate this website"</code> or <code>craft-anything-cli rebuild - "A snake game in Rust" --rounds 1</code>.</li>
+<li><b>Give its tools to your agent:</b> <code>craft-anything-cli mcp</code> serves them to any MCP client; <code>craft-anything-cli setup</code> connects coding-agent apps.</li>
+</ol>
+<h2>Use it responsibly</h2>
+<ul>
+<li>Only on software you own or are allowed to examine. The project says it never bypasses DRM, logins or anti-cheat.</li>
+<li>Clean room (default) works only from what you can see; Deep mode reads code and files "for your private use".</li>
+<li>Installing a generated project's dependencies runs code: approve commands only for projects you trust.</li>
+<li>Generated pictures and 3D models are opt-in and paid with your own fal.ai key; everything else works without it.</li>
+</ul>
+<p>Sources: the project's README, Cargo.toml and license files; our sandbox transcript.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
