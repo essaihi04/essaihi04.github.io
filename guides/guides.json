@@ -368,5 +368,10 @@
   "channel": "ai-explained",
   "title": "Which Free AI Tool for Which Job? The Cheat Sheet",
   "link": null
+ },
+ "ai-hallucination-fact-check": {
+  "channel": "ai-explained",
+  "title": "The AI Fact-Check Cheat Sheet",
+  "link": null
  }
 }

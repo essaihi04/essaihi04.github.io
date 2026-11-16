@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>The AI Fact-Check Cheat Sheet | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>The AI Fact-Check Cheat Sheet</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>AI chatbots sometimes state false things with total confidence. This is called a <b>hallucination</b>. Here is why it happens and five quick checks to catch it.</p>
+<h2>Why it happens (30-second version)</h2>
+<ul>
+<li>A chatbot does not look facts up. It predicts the next word that sounds right. A fake fact can sound exactly like a real one.</li>
+<li>OpenAI researchers (Kalai et al., September 2025) found that "language models hallucinate because the training and evaluation procedures reward guessing over acknowledging uncertainty". A lucky guess scores a point; "I don't know" scores zero.</li>
+</ul>
+<h2>The real case from the video</h2>
+<ul>
+<li>In *Mata v. Avianca* (New York federal court, 2023), a lawyer filed a brief citing six court decisions that did not exist. ChatGPT had invented them. When asked if they were real, it said yes.</li>
+<li>On June 22, 2023, Judge P. Kevin Castel fined the two lawyers and their firm $5,000 in total.</li>
+</ul>
+<h2>5 checks before you trust an answer</h2>
+<ol>
+<li><b>The 3-chat test.</b> Ask the same question in three new chats. Facts the model really knows stay the same; invented details (names, dates, numbers, quotes) tend to change. This is the idea behind SelfCheckGPT (Manakul et al., 2023).</li>
+<li><b>Open every source.</b> Ask for links, then click them. A real title on a page that does not exist is a classic hallucination.</li>
+<li><b>Check the specifics first.</b> Exact numbers, dates, quotes, citations and names are where errors hide. Verify those before the general idea.</li>
+<li><b>Give it permission to say "I don't know".</b> Add to your prompt: *"If you are not sure, say so. Do not guess."*</li>
+<li><b>Use search-backed answers for facts.</b> For anything recent or important, use a tool that shows its sources, and read them.</li>
+</ol>
+<h2>Copy-paste prompts</h2>
+<ul>
+<li><code>Answer only if you are confident. If not, reply "I'm not sure" and explain what I should check.</code></li>
+<li><code>List every factual claim in your answer, with a source link for each one. Mark any claim you cannot source.</code></li>
+<li><code>Re-read your previous answer and point out anything that might be wrong or made up.</code></li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Legal Dive, ChatGPT fake cases (May 2023): https://www.legaldive.com/news/chatgpt-lawyer-fake-cases-generative-ai/651557/</li>
+<li>Bloomberg Law, $5,000 fine (June 22, 2023): https://news.bloomberglaw.com/bgov-labor/chatgpt-phony-legal-filing-case-gets-lawyers-a-5-000-fine</li>
+<li>Kalai, Nachum, Vempala, Zhang, "Why Language Models Hallucinate" (2025): https://arxiv.org/abs/2509.04664</li>
+<li>Manakul, Liusie, Gales, "SelfCheckGPT" (EMNLP 2023): https://arxiv.org/abs/2303.08896</li>
+</ul>
+<p>*This guide is general information, not legal or professional advice.*</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>
