@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Mister Download Manager: setup and what our tests showed | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Mister Download Manager: setup and what our tests showed</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/anefzaoui/misterdownloadmanager">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>Repo:</b> <a href="https://github.com/anefzaoui/misterdownloadmanager">anefzaoui/misterdownloadmanager</a> by Ahmed Nefzaoui · License <b>GPL-3.0</b> · Rust · created 29 Oct 2026.</p>
+<h2>What it is</h2>
+<p>A free, open-source download manager written in Rust, positioned as an alternative to Internet Download Manager (IDM).</p>
+<p>It splits each file into pieces and downloads them over several connections at once (8 by default, 1 to 128).</p>
+<p>When a connection finishes early, it takes half of the slowest piece left, so the end of a download doesn't crawl.</p>
+<p>Windows and Linux; macOS builds are marked experimental by the project.</p>
+<h2>Install (easiest)</h2>
+<ol>
+<li>Open the <a href="https://github.com/anefzaoui/misterdownloadmanager/releases/latest">latest release</a>.</li>
+<li><b>Windows:</b> take the <code>...-setup.exe</code>. The first time, Windows may say "Windows protected your PC" because the app isn't code-signed yet (the README says so). Or use WinGet: <code>winget install AhmedNefzaoui.MisterDownloadManager</code>.</li>
+<li><b>Linux:</b> <code>.deb</code> (Ubuntu, Debian, Mint), <code>.rpm</code> (Fedora, openSUSE), <code>.AppImage</code> or <code>.tar.gz</code>.</li>
+<li>Add the browser extension (Chrome Web Store or Firefox Add-ons) so your browser hands downloads to the app.</li>
+</ol>
+<h2>Build from source (what we did)</h2>
+<p>You need a recent Rust compiler (the project asks for Rust 1.98 or newer).</p>
+<pre><code>git clone https://github.com/anefzaoui/misterdownloadmanager
+cd misterdownloadmanager
+cargo build --release -p mdm-app -p mdm-cli</code></pre>
+<p>Build <b>both</b> packages: <code>misterdownloadmanager-cli</code> is only a launcher and stops with</p>
+<p>"the app's program isn't next to misterdownloadmanager-cli" if the app isn't built next to it.</p>
+<p>Our build: 11 minutes on a 4-core cloud machine, with link-time optimisation turned off.</p>
+<h2>3 useful commands</h2>
+<pre><code>misterdownloadmanager-cli get &lt;url&gt; -o ~/Downloads/
+
+misterdownloadmanager-cli resume ~/Downloads/&lt;file&gt;.mdm.json
+
+misterdownloadmanager-cli get &lt;url&gt; --checksum sha256:&lt;hash&gt;</code></pre>
+<h2>Our results (17 Nov 2026, one cloud machine, fast datacenter link)</h2>
+<p>| Test | Result |</p>
+<p>| --- | --- |</p>
+<p>| Debian 13.7 image (756 MiB), curl, 1 connection | 27.5 to 28.9 s (8 runs) |</p>
+<p>| Same file, MDM, 1 connection | 26.0 to 28.5 s (4 runs): no faster than curl |</p>
+<p>| Same file, MDM, 8 connections (default) | 8.0 to 9.5 s (5 runs) |</p>
+<p>| Same file, MDM, 16 connections | 6.0 to 6.5 s (4 runs), about 4.3x faster than curl |</p>
+<p>| Same file, MDM, 32 connections | 6.0 to 6.5 s (4 runs): no gain past 16 |</p>
+<p>| Linux kernel source (141 MiB) | curl 1.2 to 2.7 s, MDM 1.0 to 1.5 s: a tie |</p>
+<p>| 3 files at once (about 1.6 GiB) | 3 × curl 28.7 s, MDM 10.0 s |</p>
+<p>| Ctrl+C after 2 s, then <code>resume</code> | paused at 1.4 %, resumed from there, done in 8.5 s, checksum OK |</p>
+<p>| Wrong checksum on purpose | refused (exit code 1), file kept as <code>.mdm.part</code> |</p>
+<p>Every finished Debian copy matched Debian's official SHA-256 (a7ef94ac…e355).</p>
+<p><b>Limits of our test:</b> a datacenter connection, a handful of runs, one server per file.</p>
+<p>On a home line, a single connection often fills the line already, so the gain can be small.</p>
+<p>Multiple connections help most with slow or distant servers, or servers that limit each connection.</p>
+<p>We did not test IDM (paid, Windows only): the README's "5x faster than IDM" figures are the developer's own lab measurements.</p>
+<p>We did not test the video, torrent or debrid features. Respect each website's terms of use.</p>
+<h2>Sources</h2>
+<ul>
+<li>Repo, README, source code: https://github.com/anefzaoui/misterdownloadmanager</li>
+<li>Debian 13.7 netinst image and official SHA256SUMS: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</li>
+<li>IDM pricing (official): https://www.internetdownloadmanager.com/buy.html</li>
+<li>Our sandbox transcripts (scripts/safe_demo.py, Repo Radar)</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>

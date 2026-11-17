@@ -403,5 +403,10 @@
   "channel": "fallen-empires",
   "title": "The Lip Bar: the full deal sheet",
   "link": null
+ },
+ "mister-download-manager-tested": {
+  "channel": "repo-radar",
+  "title": "Mister Download Manager: setup and what our tests showed",
+  "link": "https://github.com/anefzaoui/misterdownloadmanager"
  }
 }
