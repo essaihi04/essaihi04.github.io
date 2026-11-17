@@ -393,5 +393,10 @@
   "channel": "fallen-empires",
   "title": "Simply Fit Board: the Shark Tank deal sheet",
   "link": null
+ },
+ "deepseek-harness": {
+  "channel": "repo-radar",
+  "title": "DeepSeek Harness (dsh): setup guide",
+  "link": "https://github.com/deepseek-ai/deepseek-harness"
  }
 }

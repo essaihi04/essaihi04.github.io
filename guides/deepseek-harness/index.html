@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>DeepSeek Harness (dsh): setup guide | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>DeepSeek Harness (dsh): setup guide</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/deepseek-ai/deepseek-harness">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>DeepSeek Harness is DeepSeek's open-source agent harness (MIT license). Its idea: <b>everything is a plugin</b>. The model, the tools, the sandbox, the scheduler and even the web interface are separate packages you can swap. Tested by Repo Radar in a sandbox on 2026-11-17 (version 0.2.2-rc.3).</p>
+<h2>Key facts (checked 2026-11-17)</h2>
+<ul>
+<li>282,655 GitHub stars, created 2026-08-13 (GitHub API).</li>
+<li>License: MIT.</li>
+<li>Status: developer preview. The README warns: "THERE WILL BE COMPATIBILITY-BREAKING CHANGES."</li>
+<li><code>packages/</code> holds 53 plugin families: llm, shell, sandbox, web, mcp, skill, subagent, browser-use, schedule, team, terminal and more.</li>
+</ul>
+<h2>Read this first</h2>
+<ul>
+<li>Read <a href="https://github.com/deepseek-ai/deepseek-harness/blob/main/SAFETY.md">SAFETY.md</a>. An agent can run commands: wrong model output or an untrusted plugin may modify or delete files. Start in a throwaway folder or a VM.</li>
+<li>The harness is free. The default model (DeepSeek) needs a <b>DeepSeek API key</b>, billed per use by DeepSeek. Without it, our run stopped with <code>MISSING_CREDENTIAL: llm-deepseek</code>.</li>
+</ul>
+<h2>Option 1: run from npm (fastest)</h2>
+<ol>
+<li>Install Node.js (the repo asks for Node 24.9 or newer).</li>
+<li>Run:</li>
+<pre><code>npx @deepseek-ai/dsh web</code></pre>
+<li>The web UI opens at <code>http://127.0.0.1:3080</code>. The link printed in the terminal contains a secret token: without it the server answers <code>401</code>. Don't share that link.</li>
+<li>Add your DeepSeek API key on the <b>Models</b> page (or export <code>DEEPSEEK_API_KEY</code> before launching).</li>
+</ol>
+<h2>Option 2: build from source (what we did)</h2>
+<pre><code>git clone https://github.com/deepseek-ai/deepseek-harness.git
+cd deepseek-harness
+pnpm install
+pnpm run build
+pnpm dsh web</code></pre>
+<ul>
+<li>Our build: 10 checks passed, 0 failed, in about 4.5 to 5 minutes on 4 CPUs.</li>
+</ul>
+<h2>3 things to try</h2>
+<ol>
+<li><b>One-shot task from the terminal:</b> <code>dsh headless "run the tests"</code> answers one task, prints the result and exits.</li>
+<li><b>Terminal UI:</b> <code>dsh tui</code> (resume a session with <code>dsh tui --resume &lt;session&gt;</code>).</li>
+<li><b>Install a plugin:</b> <code>dsh plugin --profile tui add &lt;package&gt;</code>. Community plugins use the GitHub topic <a href="https://github.com/topics/dsh-plugin">dsh-plugin</a>.</li>
+</ol>
+<h2>Useful flags</h2>
+<ul>
+<li><code>--no-open</code>: start the web server without opening a browser.</li>
+<li><code>--dump-config</code>: print the composed profile (which plugins are loaded) and exit.</li>
+<li><code>--patch &lt;file.yml&gt;</code>: add an extra config layer on top of a profile.</li>
+</ul>
+<h2>Links</h2>
+<ul>
+<li>Repository: https://github.com/deepseek-ai/deepseek-harness</li>
+<li>Documentation: https://deepseek-harness.github.io/deepseek-harness/</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
