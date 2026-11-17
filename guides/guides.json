@@ -383,5 +383,10 @@
   "channel": "repo-radar",
   "title": "Craft Anything: setup guide",
   "link": "https://github.com/storytold/craft-anything"
+ },
+ "diffusion-llm": {
+  "channel": "ai-explained",
+  "title": "Diffusion LLMs: the one-page cheat sheet",
+  "link": null
  }
 }
