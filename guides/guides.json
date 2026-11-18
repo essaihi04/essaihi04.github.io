@@ -423,5 +423,10 @@
   "channel": "fallen-empires",
   "title": "Dude Wipes on Shark Tank: the full deal sheet",
   "link": null
+ },
+ "kiri-free-ngrok-alternative": {
+  "channel": "repo-radar",
+  "title": "Kiri: the Docker Desktop alternative with a built-in public tunnel",
+  "link": "https://github.com/libracoder/kiri"
  }
 }

@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Kiri: the Docker Desktop alternative with a built-in public tunnel | Repo Radar</title>
+<style>
+:root{--ink:#0D1117;--accent:#7EE787;--accent2:#FF7B72}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>Repo Radar</small><h1>Kiri: the Docker Desktop alternative with a built-in public tunnel</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/libracoder/kiri">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p><b>Repo:</b> <a href="https://github.com/libracoder/kiri">libracoder/kiri</a> · Apache-2.0 · Rust · macOS, Windows, Linux · free, in beta (runkiri.com, November 2026).</p>
+<h2>What it is</h2>
+<ul>
+<li>A lightweight replacement for Docker Desktop and OrbStack. It speaks the Docker Engine API, so <code>docker</code>, Compose and buildx keep working.</li>
+<li>On macOS and Windows it runs containers in one small Linux VM; on Linux it runs straight on the kernel.</li>
+<li><b>Kiri Share</b>: one command gives a local port or a container a public HTTPS address on <code>runkiri.cloud</code> (an ngrok-style tunnel).</li>
+</ul>
+<h2>What we measured (Repo Radar sandbox, 18 Nov 2026)</h2>
+<ul>
+<li><code>cargo build -p kiri -p kiri-init</code> (debug build): <b>29.11 s</b> on a cloud VM.</li>
+<li><code>docker version</code> against Kiri's socket answers <b>Server: Kiri</b>, API 1.47, written in Rust.</li>
+<li>Daemon memory: <b>14,156 KB (about 14 MB)</b>. The README says "about 15 MB".</li>
+<li><code>kiri share 8000</code> answered <b>"not signed in"</b>: the tunnel needs a sign-in first (GitHub device flow, <code>kiri share login</code>).</li>
+<li>Containers did <b>not</b> start in our locked cloud sandbox ("the agent exited"), so we could not check the speed claim.</li>
+<li>Speed claim from the README (their benchmark, median of 30 runs): Kiri 2.55 ms, Docker Desktop 213 ms, OrbStack 380 ms per <code>docker run</code> through the Engine API.</li>
+</ul>
+<h2>Install</h2>
+<ol>
+<li>Download the installer from <a href="https://runkiri.com/releases/">runkiri.com/releases</a>: <code>.dmg</code> (macOS 14+), <code>.msi</code> (Windows 10/11 via WSL 2), <code>.deb</code> or <code>.rpm</code> (Linux).</li>
+<li>Open Kiri once: it creates a <code>kiri</code> Docker context.</li>
+<li>Test it:</li>
+<pre><code>docker --context kiri run --rm alpine echo hello</code></pre>
+</ol>
+<h2>3 ways to use it</h2>
+<ol>
+<li><b>Share a local app on the internet</b></li>
+<pre><code>kiri share login        # one time, with GitHub
+kiri 3000               # port 3000 at a random https://….runkiri.cloud address
+kiri 3000 myapp         # myapp.runkiri.cloud, once the name is reserved and approved</code></pre>
+</ol>
+<p>   The first visit to a share shows a Kiri warning page before it opens.</p>
+<ol>
+<li><b>Replace Docker Desktop for Compose projects</b></li>
+<pre><code>docker --context kiri compose up -d
+kiri import             # bring images, volumes and containers over from OrbStack or Docker Desktop</code></pre>
+<li><b>A one-command Kubernetes cluster or Linux machine</b></li>
+<pre><code>kiri k8s start
+kiri machine create dev --distro ubuntu &amp;&amp; kiri machine shell dev</code></pre>
+</ol>
+<h2>Good to know</h2>
+<ul>
+<li>Still in beta: expect changes. Read the release notes in <code>docs/releases</code> before upgrading.</li>
+<li>The tunnel runs through Kiri's own cloud (<code>runkiri.cloud</code>): don't expose anything private without your own authentication.</li>
+<li>Compare with ngrok's free plan (ngrok.com/pricing, Nov 2026): 1 GB of data transfer out and 3 endpoints, paid plans from $8/month.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://github.com/libracoder/kiri">github.com/libracoder/kiri</a> (README, docs/development.md, docs/releases)</li>
+<li><a href="https://runkiri.com">runkiri.com</a></li>
+<li><a href="https://ngrok.com/pricing">ngrok.com/pricing</a></li>
+<li>Repo Radar sandbox test (scripts/safe_demo.py), 18 Nov 2026</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UCaacMV5SsqIo04JDDqt7mtw?sub_confirmation=1">🔔 Subscribe to Repo Radar</a></div></main>
+<footer>Free guide from Repo Radar. Information only, not financial, legal or medical advice.</footer></body></html>
