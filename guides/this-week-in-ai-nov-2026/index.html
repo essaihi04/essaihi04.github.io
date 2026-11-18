@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>This Week in AI: the 1-page cheat sheet (Nov 9–17, 2026) | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>This Week in AI: the 1-page cheat sheet (Nov 9–17, 2026)</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>Every model and tool from the video, what it costs, and when to use it. All facts come from the official announcements linked at the bottom.</p>
+<h2>The 5 updates at a glance</h2>
+<p>| Update | Who / when | Price | Use it for |</p>
+<p>|---|---|---|---|</p>
+<p>| Gemini 4 Hydrogen | Google, Nov 12 | $1.50 in / $7.50 out per 1M tokens | Fast everyday work: PDFs, sheets, reports |</p>
+<p>| Claude Fable 5.2 | Anthropic, Nov 9 | $8 in / $40 out per 1M tokens | Long, hard jobs: migrations, audits |</p>
+<p>| Copilot Fusion (+ GPT-6.2 Astra &amp; Sol) | GitHub, Nov 17 | Underlying models billed at list price | Coding with automatic model routing |</p>
+<p>| Vera Rubin + DGX Spark HPC kit | NVIDIA, Nov 16–17 | Kit price not published | Private, on-premise AI |</p>
+<p>| AlphaGenome 2 | Google DeepMind, Nov 11 | Free for non-commercial research (API) | Genetics and biology research |</p>
+<h2>1. Gemini 4 Hydrogen (Google)</h2>
+<ul>
+<li><b>What it is:</b> the fast Gemini 4 model. Carbon is the deep thinker; Hydrogen is the everyday worker.</li>
+<li><b>Speed:</b> finishes tasks 2.5× faster than Gemini 3.8 Flash (Google).</li>
+<li><b>Price:</b> $1.50 per million input tokens, $7.50 per million output tokens, flat across the 1-million-token context window.</li>
+<li><b>Terminal-Bench 4.1:</b> 57% (Gemini 3.8 Flash: 18.2%).</li>
+<li><b>Where:</b> Gemini app (auto model selection), Google Search, AI Studio and the Gemini API.</li>
+<li><b>Try it for:</b> turning PDFs, spreadsheets, charts, audio and video into a report with citations.</li>
+</ul>
+<h2>2. Claude Fable 5.2 and Mythos 5.2 (Anthropic)</h2>
+<ul>
+<li><b>What it is:</b> one model, two versions. Fable is for everyone; Mythos is for vetted security and biomedical teams.</li>
+<li><b>Price:</b> $8 per million input tokens, $40 per million output tokens. Outputs up to 30% faster than 5.1.</li>
+<li><b>FrontierSWE v2:</b> 69.9% (Claude Opus 5.5: 62.3%).</li>
+<li><b>Tested on:</b> a Python → Rust migration (≈26× faster start-up), a prototype OS built by 1,000+ subagents in 8 days, a Lean formalization of Fermat's Last Theorem in 30 hours.</li>
+<li><b>Where:</b> Claude apps, Claude Code, the Claude Platform (<code>claude-fable-5-2</code>), AWS, Google Cloud, Microsoft Azure.</li>
+<li><b>Try it for:</b> the long, hard job. Let it act as advisor or orchestrator and hand simple steps to smaller models.</li>
+</ul>
+<h2>3. GitHub Copilot Fusion (+ GPT-6.2)</h2>
+<ul>
+<li><b>What it is:</b> a router. You pick an effort level; Copilot picks and coordinates the models for each step.</li>
+<li><b>Terminal-Bench 4.1:</b> Fusion Max 71.2%, 5.4 points ahead of Claude Opus 5.5 and Fable 5.2 (GitHub).</li>
+<li><b>Cost:</b> 88% less than Fable 5.2 and 57% less than Opus 5.5 (GitHub).</li>
+<li><b>New in the mix:</b> Claude Sonnet 5.5 (Fusion Max), GPT-6.1 Terra (Fusion High), MAI-Code-2 (Fusion Standard).</li>
+<li><b>GPT-6.2 Astra and Sol:</b> generally available in Copilot (gradual rollout) for Pro+, Max, Business and Enterprise. In GitHub's early tests, GPT-6.2 Sol found nearly 2× as many real code-review issues as GPT-6.1 Sol.</li>
+<li><b>Try it for:</b> everyday coding. Track your <b>cost per finished task</b>, not per token.</li>
+</ul>
+<h2>4. NVIDIA: the numbers and the hardware</h2>
+<ul>
+<li><b>Q3 fiscal 2027 revenue:</b> $115.8 billion, up 103% year over year. Data center: $107.6 billion. Outlook for next quarter: about $130 billion (±3%).</li>
+<li><b>Vera Rubin NVL72 (provisional MLPerf Endpoints result, Kimi K3):</b> more than 10× the tokens per watt of GB300 NVL72 (41,414 vs 2,210 tokens/s).</li>
+<li><b>DGX Spark HPC Developer Kit:</b> 4 desktop nodes in a ring, no network switch, 512 GB combined memory, models up to 700B parameters run locally (NVFP4). On sale through OEM partners; no price published.</li>
+<li><b>Takeaway:</b> if your data can't leave the building, a frontier-size open model now fits in an office.</li>
+</ul>
+<h2>5. AlphaGenome 2 (Google DeepMind)</h2>
+<ul>
+<li><b>What it does:</b> reads 1 million DNA letters at once and predicts how a change affects one specific cell type.</li>
+<li><b>Trained on:</b> 107+ million single-cell profiles across 68 tissues (human and mouse).</li>
+<li><b>Result:</b> found the causal variant in 30% of cases vs 16% for previous tools (TenK10K, 28 immune cell types).</li>
+<li><b>Access:</b> free for non-commercial research via the AlphaGenome API; commercial access in private preview on Google Cloud.</li>
+</ul>
+<h2>The one idea to remember</h2>
+<p>The hard part of AI work is no longer only raw intelligence. It is choosing <b>which model does which step</b>:</p>
+<ol>
+<li>A fast, cheap model for the easy steps (Hydrogen-class).</li>
+<li>An expensive expert for the hard thinking (Fable-class).</li>
+<li>A router or orchestrator that splits the work (Fusion-class).</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/">Google: Introducing Gemini 4 Hydrogen</a></li>
+<li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Anthropic: Claude Fable 5.2 and Claude Mythos 5.2</a></li>
+<li><a href="https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models">GitHub Changelog: Copilot Fusion updates</a></li>
+<li><a href="https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available">GitHub Changelog: GPT-6.2 Astra and GPT-6.2 Sol</a></li>
+<li><a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027">NVIDIA: Q3 fiscal 2027 results</a></li>
+<li><a href="https://blogs.nvidia.com/blog/mlperf-training-endpoints-vera-rubin/">NVIDIA: MLPerf and Vera Rubin</a></li>
+<li><a href="https://blogs.nvidia.com/blog/dgx-spark-hpc-developer-kit-sc26/">NVIDIA: DGX Spark HPC Developer Kit</a></li>
+<li><a href="https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/">Google DeepMind: AlphaGenome 2</a></li>
+</ul>
+<p>Prices and benchmarks are the companies' own figures as of November 2026. This is information, not purchasing or investment advice.</p>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>

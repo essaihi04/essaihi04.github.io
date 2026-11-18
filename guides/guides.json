@@ -408,5 +408,10 @@
   "channel": "repo-radar",
   "title": "Mister Download Manager: setup and what our tests showed",
   "link": "https://github.com/anefzaoui/misterdownloadmanager"
+ },
+ "this-week-in-ai-nov-2026": {
+  "channel": "ai-explained",
+  "title": "This Week in AI: the 1-page cheat sheet (Nov 9–17, 2026)",
+  "link": null
  }
 }
