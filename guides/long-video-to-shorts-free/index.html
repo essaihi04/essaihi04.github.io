@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Turn One Long Video Into Shorts With Free AI | AI Explained Simply</title>
+<style>
+:root{--ink:#06101F;--accent:#2F7CFF;--accent2:#FFD23F}
+*{box-sizing:border-box}body{margin:0;background:#fafaf8;color:#1d1d1b;font:17px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 16px}header div,main{max-width:760px;margin:0 auto}
+header small{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:30px;line-height:1.2;margin:6px 0 0}main{padding:8px 16px 48px}h2{margin-top:32px;border-bottom:3px solid var(--accent);display:inline-block}
+pre{background:#111;color:#eee;padding:14px;border-radius:8px;overflow-x:auto;font-size:14px}code{font-size:15px}
+a{color:#b4462f}.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;color:#fff;background:#e1251b}
+.btn.alt{background:var(--ink)}footer{max-width:760px;margin:0 auto;padding:16px;color:#777;font-size:14px;border-top:1px solid #ddd}
+@media print{.cta,.noprint{display:none}body{background:#fff}}
+</style></head><body><header><div><small>AI Explained Simply</small><h1>Turn One Long Video Into Shorts With Free AI</h1></div></header>
+<main><p class="cta"><a class="btn alt" href="https://github.com/SYSTRAN/faster-whisper">👉 Open the link</a><a class="btn alt" href="guide.pdf" download>⬇ Download the PDF</a></p><p>The exact method from the video, tested on a 28-minute NASA film (1969, public domain). Total cost: $0. No GPU needed.</p>
+<h2>What you need</h2>
+<ul>
+<li>Python 3.9 or newer</li>
+<li>FFmpeg (free): https://ffmpeg.org</li>
+<li>faster-whisper (free, MIT licence), a faster version of OpenAI's Whisper: https://github.com/SYSTRAN/faster-whisper</li>
+<li>A video you have the rights to use (your own video, or public domain)</li>
+</ul>
+<h2>Step 1: install</h2>
+<pre><code>pip install faster-whisper</code></pre>
+<h2>Step 2: transcribe, with a time for every word</h2>
+<p>Save this as <code>transcribe.py</code>:</p>
+<pre><code>import json, sys
+from faster_whisper import WhisperModel
+model = WhisperModel(&quot;small.en&quot;, device=&quot;cpu&quot;, compute_type=&quot;int8&quot;)
+segments, info = model.transcribe(sys.argv[1], word_timestamps=True, vad_filter=True)
+out = [{&quot;start&quot;: s.start, &quot;end&quot;: s.end, &quot;text&quot;: s.text.strip(),
+        &quot;words&quot;: [{&quot;w&quot;: w.word, &quot;s&quot;: w.start, &quot;e&quot;: w.end} for w in s.words]} for s in segments]
+json.dump(out, open(&quot;transcript.json&quot;, &quot;w&quot;), indent=1)
+for s in out: print(f&quot;{s[&#x27;start&#x27;]:7.1f}  {s[&#x27;text&#x27;]}&quot;)</code></pre>
+<p>Run it:</p>
+<pre><code>python transcribe.py my-video.mp4</code></pre>
+<p>In our test, 28 minutes of audio took 150 seconds on 4 CPU cores.</p>
+<p>Tip: if faster-whisper cannot open your file, convert the audio first with <code>ffmpeg -i my-video.mp4 -ac 1 -ar 16000 audio.wav</code> and transcribe <code>audio.wav</code>.</p>
+<h2>Step 3: find your moments</h2>
+<p>Search the printed transcript (Ctrl+F) instead of scrubbing the video:</p>
+<ul>
+<li>numbers ("383 pounds")</li>
+<li>surprising words ("never", "first", "only")</li>
+<li>questions and answers</li>
+</ul>
+<p>Write down the start and end second of each moment (30 to 60 seconds is a good Short).</p>
+<h2>Step 4: cut a vertical clip (9:16) with one command</h2>
+<pre><code>ffmpeg -ss 777.5 -to 838 -i my-video.mp4 -filter_complex &quot;[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=30:2[bg];[b]scale=1080:-2[fg];[bg][fg]overlay=0:(H-h)/2&quot; -c:v libx264 -crf 20 -c:a aac clip1.mp4</code></pre>
+<p>This puts the original picture in the middle and a blurred copy behind it, so nothing is cropped away.</p>
+<h2>Step 5: burn in captions</h2>
+<p>Turn the word times from <code>transcript.json</code> into a subtitle file (<code>.srt</code> or <code>.ass</code>), then add <code>,subtitles=captions.srt</code> at the end of the filter in Step 4. Three words per caption reads well on a phone.</p>
+<h2>3 ways to use it</h2>
+<ol>
+<li>Podcast or interview: search for numbers and strong opinions, cut 5 clips per episode.</li>
+<li>Tutorial: search for "step" or "the trick is", one clip per step.</li>
+<li>Webinar or lecture: search for questions from the audience, one clip per answer.</li>
+</ol>
+<h2>2 mistakes to avoid</h2>
+<ul>
+<li>Posting without reading the captions: Whisper wrote "100-prison laser" instead of "100-prism laser" in our test.</li>
+<li>Cutting mid-sentence: start at the segment's start time, end at the next segment's start.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>OpenAI Whisper (MIT licence): https://github.com/openai/whisper</li>
+<li>faster-whisper: https://github.com/SYSTRAN/faster-whisper</li>
+<li>FFmpeg: https://ffmpeg.org</li>
+<li>Test film: "The Eagle Has Landed: The Flight of Apollo 11" (NASA, 1969), https://archive.org/details/gov.archives.arc.45017</li>
+</ul>
+<div class="cta noprint"><a class="btn" href="https://www.youtube.com/channel/UC6GFQjA4DZ0q0UP1O4gv3Pg?sub_confirmation=1">🔔 Subscribe to AI Explained Simply</a></div></main>
+<footer>Free guide from AI Explained Simply. Information only, not financial, legal or medical advice.</footer></body></html>

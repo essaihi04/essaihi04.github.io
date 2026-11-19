@@ -428,5 +428,10 @@
   "channel": "repo-radar",
   "title": "Kiri: the Docker Desktop alternative with a built-in public tunnel",
   "link": "https://github.com/libracoder/kiri"
+ },
+ "long-video-to-shorts-free": {
+  "channel": "ai-explained",
+  "title": "Turn One Long Video Into Shorts With Free AI",
+  "link": "https://github.com/SYSTRAN/faster-whisper"
  }
 }
